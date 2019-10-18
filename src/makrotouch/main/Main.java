@@ -1,39 +1,40 @@
 package makrotouch.main;
 
-import makrotouch.display.Drawer;
+import makrotouch.display.IconManager;
 import makrotouch.display.Window;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
-
-import javax.imageio.ImageIO;
-import java.io.*;
 
 public class Main implements Runnable {
 
+	private static final String configPath = "res/config/makrotouch.xml";
 	private Graphics2D g;
 	private BufferStrategy bs;
 	private Thread thread;
 	private Window window;
 	private Dimension screenBounds = Toolkit.getDefaultToolkit().getScreenSize();
-	private Drawer draw;
-
 	private boolean running = false;
 
 	public Main() {
-		window = new Window("Test");
+		window = new Window("Makrotouch", 1024, 600, true, false);
 	}
 
 	public void run() {
-		System.out.println("Running");
 		while (running) {
 			render();
+//			render();
+			tick();
+//			return;
 		}
-		System.out.println("Thread stopping");
 	}
 
 	public void render() {
+//		try {
+//			Thread.sleep(2000);
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
 		bs = window.getCanvas().getBufferStrategy();
 
 		if (bs == null) {
@@ -42,32 +43,44 @@ public class Main implements Runnable {
 		}
 
 		g = (Graphics2D) bs.getDrawGraphics();
-		draw = new Drawer(g, window);
+		IconManager icnmgr = new IconManager(g, window);
 		// Begin Draw
-		draw.clear();
-		
-		draw.initIcons(4, 2, 100);
-		
+
+
+		try {
+			icnmgr.clear();
+			icnmgr.initIcons(4, 2, 75);
+			icnmgr.drawIcons();
+		} catch (NullPointerException e) {
+			g.dispose();
+			return;
+		}
+
 		// End Draw
 		g.dispose();
 		bs.show();
 	}
 
+	public void tick() {
+
+	}
+
 	public synchronized void start() {
-		System.out.println("Thread starting");
 		running = true;
 		thread = new Thread(this);
 		thread.start();
-		System.out.println("Thread started");
 	}
 
 	public synchronized void stop() {
 		running = false;
 		try {
 			thread.join();
-			System.out.println("Thread stopped");
 		} catch (InterruptedException e) {
 			stop();
 		}
+	}
+
+	public static String getConfigPath() {
+		return configPath;
 	}
 }

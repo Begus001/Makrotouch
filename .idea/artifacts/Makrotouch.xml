@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Makrotouch">
+    <output-path>$PROJECT_DIR$/exec</output-path>
+    <root id="archive" name="Makrotouch_build005.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/exec/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="Makrotouch" />
+    </root>
+  </artifact>
+</component>
