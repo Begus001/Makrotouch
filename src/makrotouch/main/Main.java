@@ -1,5 +1,6 @@
 package makrotouch.main;
 
+import makrotouch.display.Icon;
 import makrotouch.display.IconManager;
 import makrotouch.display.Window;
 
@@ -40,6 +41,7 @@ public class Main implements Runnable {
 	}
 
 	public void run() {
+		icnmgr.initIcons(4, 2, 75);
 		while (running) {
 			tick();
 			render();
@@ -51,12 +53,10 @@ public class Main implements Runnable {
 	public void tick() {
 		switch (programState) {
 			case 0:
-				icnmgr.initIcons(4, 2, 75);
 				break;
 			case 1:
-				icnmgr.initIcons(4, 2, 75);
-				IconManager.getIcons().get(0).setX((int) MouseInfo.getPointerInfo().getLocation().getX());
-				IconManager.getIcons().get(0).setY((int) MouseInfo.getPointerInfo().getLocation().getY());
+				IconManager.getIcons().get(0).setX((int) MouseInfo.getPointerInfo().getLocation().getX() - IconManager.getIcons().get(0).getWidth() / 2);
+				IconManager.getIcons().get(0).setY((int) MouseInfo.getPointerInfo().getLocation().getY() - IconManager.getIcons().get(0).getHeight() / 2);
 				break;
 		}
 	}

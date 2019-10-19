@@ -23,12 +23,12 @@ public class FileManager {
 		}
 	}
 
-	public ArrayList<Icon> loadIcons() {
+	public ArrayList<Icon> loadIcons(int page) {
 		ArrayList<Icon> tmp = new ArrayList<>();
 		tmp.clear();
 		try {
 			NodeList icons = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(Main.getConfigPath()).getElementsByTagName("icon");
-			for (int i = 0; i < icons.getLength(); i++) {
+			for (int i = 0; i < 8; i++) {
 				Element current = (Element) icons.item(i);
 				tmp.add(new Icon(Integer.parseInt(current.getAttribute("id")), getProperty(current, "name"), getProperty(current, "image_path")));
 			}

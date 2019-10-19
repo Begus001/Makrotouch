@@ -17,9 +17,10 @@ public class IconManager {
 	private Rectangle2D windowBounds;
 	private JFrame window;
 	private FileManager flmgr = new FileManager();
+	private static int page = 2;
 
 	public IconManager(JFrame window) {
-		this.g = (Graphics2D) g;
+		this.g = g;
 		this.window = window;
 		windowBounds = this.window.getContentPane().getBounds();
 	}
@@ -48,7 +49,7 @@ public class IconManager {
 
 		iconPos.clear();
 		icons.clear();
-		icons = flmgr.loadIcons();
+		icons = flmgr.loadIcons(page);
 		if (icons == null) {
 			return;
 		}
