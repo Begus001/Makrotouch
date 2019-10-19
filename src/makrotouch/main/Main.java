@@ -14,10 +14,18 @@ public class Main implements Runnable {
 	private Thread thread;
 	private Window window;
 	private Dimension screenBounds = Toolkit.getDefaultToolkit().getScreenSize();
+	private static IconManager icnmgr;
+
 	private boolean running = false;
+	private int programState = 0;
 
 	public Main() {
 		window = new Window("Makrotouch", 1024, 600, true, false);
+		icnmgr = new IconManager(window);
+	}
+
+	public static String getConfigPath() {
+		return configPath;
 	}
 
 	public void run() {
@@ -30,11 +38,6 @@ public class Main implements Runnable {
 	}
 
 	public void render() {
-//		try {
-//			Thread.sleep(2000);
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		}
 		bs = window.getCanvas().getBufferStrategy();
 
 		if (bs == null) {
@@ -43,20 +46,24 @@ public class Main implements Runnable {
 		}
 
 		g = (Graphics2D) bs.getDrawGraphics();
-		IconManager icnmgr = new IconManager(g, window);
-		// Begin Draw
+		icnmgr.setG(g);
 
-
-		try {
-			icnmgr.clear();
-			icnmgr.initIcons(4, 2, 75);
-			icnmgr.drawIcons();
-		} catch (NullPointerException e) {
-			g.dispose();
-			return;
+		switch (programState) {
+			case 0:
+				try {
+					icnmgr.clear();
+					icnmgr.initIcons(4, 2, 75);
+					icnmgr.drawIcons();
+				} catch (NullPointerException e) {
+					g.dispose();
+					bs.show();
+					return;
+				}
+				break;
+			default:
+				break;
 		}
 
-		// End Draw
 		g.dispose();
 		bs.show();
 	}
@@ -78,9 +85,5 @@ public class Main implements Runnable {
 		} catch (InterruptedException e) {
 			stop();
 		}
-	}
-
-	public static String getConfigPath() {
-		return configPath;
 	}
 }

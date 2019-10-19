@@ -3,7 +3,7 @@
     <icons>
         <icon id="0">
             <name>Icon 1</name>
-            <image_path>res/icons/screenshot.png</image_path>
+            <image_path>res/icons/0.png</image_path>
             <action>
                 <keyboard_type>I like Dogz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
@@ -11,8 +11,8 @@
             </action>
         </icon>
         <icon id="1">
-            <name>Langer Name</name>
-            <image_path>res/icons/screenshot.png</image_path>
+            <name>Langer Namecfhdsfhdfh</name>
+            <image_path>res/icons/1.png</image_path>
             <action>
                 <keyboard_type>I like Catz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
@@ -21,7 +21,7 @@
         </icon>
         <icon id="2">
             <name>S</name>
-            <image_path>res/icons/screenshot.png</image_path>
+            <image_path>res/icons/2.png</image_path>
             <action>
                 <keyboard_type>I like Catz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
@@ -30,7 +30,7 @@
         </icon>
         <icon id="3">
             <name>TestTest\ä@</name>
-            <image_path>res/icons/screenshot.png</image_path>
+            <image_path>res/icons/3.png</image_path>
             <action>
                 <keyboard_type>I like Catz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
@@ -39,7 +39,7 @@
         </icon>
         <icon id="4">
             <name>4</name>
-            <image_path>res/icons/screenshot.png</image_path>
+            <image_path>res/icons/4.png</image_path>
             <action>
                 <keyboard_type>I like Catz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
@@ -48,7 +48,7 @@
         </icon>
         <icon id="5">
             <name>5</name>
-            <image_path>res/icons/screenshot.png</image_path>
+            <image_path>res/icons/5.png</image_path>
             <action>
                 <keyboard_type>I like Catz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
@@ -57,7 +57,7 @@
         </icon>
         <icon id="6">
             <name>6</name>
-            <image_path>res/icons/screenshot.png</image_path>
+            <image_path>res/icons/6.png</image_path>
             <action>
                 <keyboard_type>I like Catz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
@@ -66,7 +66,7 @@
         </icon>
         <icon id="7">
             <name>7</name>
-            <image_path>res/icons/screenshot.png</image_path>
+            <image_path>res/icons/7.png</image_path>
             <action>
                 <keyboard_type>I like Catz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>

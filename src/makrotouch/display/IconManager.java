@@ -13,13 +13,15 @@ import java.util.ArrayList;
 public class IconManager {
 	private Graphics2D g;
 	private Rectangle2D windowBounds;
-	private ArrayList<Icon> icons = new ArrayList<>();
-	private ArrayList<int[]> iconPos = new ArrayList<>();
+	private JFrame window;
+	public static ArrayList<Icon> icons = new ArrayList<>();
+	public static ArrayList<int[]> iconPos = new ArrayList<>();
 	private FileManager flmgr = new FileManager();
 
-	public IconManager(Graphics g, JFrame window) {
+	public IconManager(JFrame window) {
 		this.g = (Graphics2D) g;
-		windowBounds = window.getContentPane().getBounds();
+		this.window = window;
+		windowBounds = this.window.getContentPane().getBounds();
 	}
 
 	public void initIcons(int columns, int rows, int margin) throws NullPointerException {
@@ -54,7 +56,6 @@ public class IconManager {
 				if (icons.get(k).getId() == i) {
 					icons.get(k).setX(iconPos.get(i)[0]);
 					icons.get(k).setY(iconPos.get(i)[1]);
-					icons.get(k).setImage(flmgr.loadImage("res/icons/" + k + ".png"));
 				}
 			}
 		}
@@ -80,6 +81,7 @@ public class IconManager {
 	}
 
 	public void clear() {
+		windowBounds = window.getContentPane().getBounds();
 		g.setColor(Color.black);
 		g.fillRect(0, 0, (int) windowBounds.getWidth(), (int) windowBounds.getHeight());
 	}
@@ -94,5 +96,9 @@ public class IconManager {
 
 	public void drawImage(BufferedImage image, int x, int y, int width, int height) {
 		g.drawImage(image, x, y, width, height, null);
+	}
+
+	public void setG(Graphics2D g){
+		this.g = g;
 	}
 }
