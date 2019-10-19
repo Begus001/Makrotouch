@@ -11,17 +11,33 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class IconManager {
+	private static ArrayList<Icon> icons = new ArrayList<>();
+	private static ArrayList<int[]> iconPos = new ArrayList<>();
 	private Graphics2D g;
 	private Rectangle2D windowBounds;
 	private JFrame window;
-	public static ArrayList<Icon> icons = new ArrayList<>();
-	public static ArrayList<int[]> iconPos = new ArrayList<>();
 	private FileManager flmgr = new FileManager();
 
 	public IconManager(JFrame window) {
 		this.g = (Graphics2D) g;
 		this.window = window;
 		windowBounds = this.window.getContentPane().getBounds();
+	}
+
+	public static ArrayList<Icon> getIcons() {
+		return icons;
+	}
+
+	public static void setIcons(ArrayList<Icon> icons) {
+		IconManager.icons = icons;
+	}
+
+	public static ArrayList<int[]> getIconPos() {
+		return iconPos;
+	}
+
+	public static void setIconPos(ArrayList<int[]> iconPos) {
+		IconManager.iconPos = iconPos;
 	}
 
 	public void initIcons(int columns, int rows, int margin) throws NullPointerException {
@@ -98,7 +114,7 @@ public class IconManager {
 		g.drawImage(image, x, y, width, height, null);
 	}
 
-	public void setG(Graphics2D g){
+	public void setG(Graphics2D g) {
 		this.g = g;
 	}
 }

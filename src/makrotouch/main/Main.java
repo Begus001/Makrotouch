@@ -9,31 +9,55 @@ import java.awt.image.BufferStrategy;
 public class Main implements Runnable {
 
 	private static final String configPath = "res/config/makrotouch.xml";
+	private static IconManager icnmgr;
+	private static int programState = 0;
 	private Graphics2D g;
 	private BufferStrategy bs;
 	private Thread thread;
 	private Window window;
 	private Dimension screenBounds = Toolkit.getDefaultToolkit().getScreenSize();
-	private static IconManager icnmgr;
-
 	private boolean running = false;
-	private int programState = 0;
 
 	public Main() {
-		window = new Window("Makrotouch", 1024, 600, true, false);
+		window = new Window("Makrotouch");
 		icnmgr = new IconManager(window);
+	}
+
+	public static int getProgramState() {
+		return programState;
+	}
+
+	public static void setProgramState(int programState) {
+		Main.programState = programState;
 	}
 
 	public static String getConfigPath() {
 		return configPath;
 	}
 
+	public static IconManager getIcnmgr() {
+		return icnmgr;
+	}
+
 	public void run() {
 		while (running) {
+			tick();
 			render();
 //			render();
-			tick();
 //			return;
+		}
+	}
+
+	public void tick() {
+		switch (programState) {
+			case 0:
+				icnmgr.initIcons(4, 2, 75);
+				break;
+			case 1:
+				icnmgr.initIcons(4, 2, 75);
+				IconManager.getIcons().get(0).setX((int) MouseInfo.getPointerInfo().getLocation().getX());
+				IconManager.getIcons().get(0).setY((int) MouseInfo.getPointerInfo().getLocation().getY());
+				break;
 		}
 	}
 
@@ -49,10 +73,10 @@ public class Main implements Runnable {
 		icnmgr.setG(g);
 
 		switch (programState) {
+			case 1:
 			case 0:
 				try {
 					icnmgr.clear();
-					icnmgr.initIcons(4, 2, 75);
 					icnmgr.drawIcons();
 				} catch (NullPointerException e) {
 					g.dispose();
@@ -66,10 +90,6 @@ public class Main implements Runnable {
 
 		g.dispose();
 		bs.show();
-	}
-
-	public void tick() {
-
 	}
 
 	public synchronized void start() {

@@ -49,6 +49,8 @@ public class Window extends JFrame {
         canvas = new Canvas();
         canvas.setPreferredSize(size);
 
+        canvas.addMouseListener(new TouchListener());
+
         add(canvas);
         pack();
 
