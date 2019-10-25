@@ -73,6 +73,159 @@
                 <screenshot></screenshot>
             </action>
         </icon>
+        <icon id="8">
+            <name>8</name>
+            <image_path>res/icons/8.png</image_path>
+            <action>
+                <keyboard_type>I like Catz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </action>
+        </icon>
+        <icon id="9">
+            <name>9</name>
+            <image_path>res/icons/8.png</image_path>
+            <action>
+                <keyboard_type>I like Catz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </action>
+        </icon>
+        <icon id="10">
+            <name>10</name>
+            <image_path>res/icons/8.png</image_path>
+            <action>
+                <keyboard_type>I like Catz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </action>
+        </icon>
+        <icon id="11">
+            <name>11</name>
+            <image_path>res/icons/8.png</image_path>
+            <action>
+                <keyboard_type>I like Catz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </action>
+        </icon>
+		<icon id="12">
+            <name>11</name>
+            <image_path>res/icons/8.png</image_path>
+            <action>
+                <keyboard_type>I like Catz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </action>
+        </icon>
+		<icon id="13">
+            <name>11</name>
+            <image_path>res/icons/8.png</image_path>
+            <action>
+                <keyboard_type>I like Catz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </action>
+        </icon>
+		<icon id="14">
+            <name>11</name>
+            <image_path>res/icons/8.png</image_path>
+            <action>
+                <keyboard_type>I like Catz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </action>
+        </icon>
+		<icon id="15">
+            <name>11</name>
+            <image_path>res/icons/8.png</image_path>
+            <action>
+                <keyboard_type>I like Catz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </action>
+        </icon>
+		<icon id="16">
+            <name>11</name>
+            <image_path>res/icons/8.png</image_path>
+            <action>
+                <keyboard_type>I like Catz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </action>
+        </icon>
+		<icon id="17">
+            <name>11</name>
+            <image_path>res/icons/8.png</image_path>
+            <action>
+                <keyboard_type>I like Catz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </action>
+        </icon>
+		<icon id="18">
+            <name>11</name>
+            <image_path>res/icons/8.png</image_path>
+            <action>
+                <keyboard_type>I like Catz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </action>
+        </icon>
+		<icon id="19">
+            <name>11</name>
+            <image_path>res/icons/8.png</image_path>
+            <action>
+                <keyboard_type>I like Catz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </action>
+        </icon>
+		<icon id="20">
+            <name>11</name>
+            <image_path>res/icons/8.png</image_path>
+            <action>
+                <keyboard_type>I like Catz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </action>
+        </icon>
+		<icon id="21">
+            <name>11</name>
+            <image_path>res/icons/8.png</image_path>
+            <action>
+                <keyboard_type>I like Catz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </action>
+        </icon>
+		<icon id="22">
+            <name>11</name>
+            <image_path>res/icons/8.png</image_path>
+            <action>
+                <keyboard_type>I like Catz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </action>
+        </icon>
+		<icon id="23">
+            <name>11</name>
+            <image_path>res/icons/8.png</image_path>
+            <action>
+                <keyboard_type>I like Catz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </action>
+        </icon>
+		<icon id="24">
+            <name>11</name>
+            <image_path>res/icons/8.png</image_path>
+            <action>
+                <keyboard_type>I like Catz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </action>
+        </icon>
     </icons>
     <settings>
     </settings>

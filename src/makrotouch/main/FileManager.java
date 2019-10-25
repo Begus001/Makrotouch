@@ -14,39 +14,32 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class FileManager {
-
-	public Image loadImage(String path) {
+	
+	public static Image loadImage(String path) {
 		try {
 			return ImageIO.read(new File(path));
 		} catch (IOException e) {
 			return null;
 		}
 	}
-
-	public ArrayList<Icon> loadIcons(int page) {
+	
+	public static ArrayList<Icon> loadIcons(String configPath) {
 		ArrayList<Icon> tmp = new ArrayList<>();
-		tmp.clear();
 		try {
-			NodeList icons = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(Main.getConfigPath()).getElementsByTagName("icon");
-			for (int i = 0; i < 8; i++) {
+			NodeList icons = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(configPath).getElementsByTagName("icon");
+			for (int i = 0; i < icons.getLength(); i++) {
 				Element current = (Element) icons.item(i);
 				tmp.add(new Icon(Integer.parseInt(current.getAttribute("id")), getProperty(current, "name"), getProperty(current, "image_path")));
 			}
-		} catch (NumberFormatException e) {
-			return null;
-		} catch (SAXException e) {
-			return null;
-		} catch (IOException e) {
-			return null;
-		} catch (ParserConfigurationException e) {
+		} catch (NumberFormatException | SAXException | IOException | ParserConfigurationException e) {
 			return null;
 		}
-
+		
 		return tmp;
 	}
-
-	private String getProperty(Element element, String name) {
+	
+	private static String getProperty(Element element, String name) {
 		return element.getElementsByTagName(name).item(0).getTextContent();
 	}
-
+	
 }
