@@ -185,6 +185,7 @@ public class IconManager {
 	public void drawIcons() {
 		g.setColor(Color.white);
 		
+		//Draw Icons
 		for (int i = 0; i < icons.size(); i++) {
 			if (icons.get(i).isVisible()) {
 				int x = icons.get(i).getX(), y = icons.get(i).getY(), width = icons.get(i).getWidth(), height = icons.get(i).getHeight(), stringWidth =
@@ -200,6 +201,7 @@ public class IconManager {
 			}
 		}
 		
+		//Draw Icon Positions
 		for (int[] i : iconPos) {
 			try {
 				g.drawOval(i[0] + (int) (window.getMousePosition().getX() - 512) * 2, i[1], 50, 50);
