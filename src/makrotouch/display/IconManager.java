@@ -9,6 +9,7 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class IconManager {
 	private static final String configPath = "res/config/makrotouch.xml";
@@ -68,18 +69,26 @@ public class IconManager {
 		iconPos.clear();
 		icons.clear();
 		icons = FileManager.loadIcons(configPath);
+		sortIcons();
 		
 		iconPageSize = columns * rows;
-		numPages = (int) Math.ceil((double) icons.size() / iconPageSize);
+		if (icons != null) {
+			numPages = (int) Math.ceil((double) icons.size() / iconPageSize);
+		}
 		
-		iconWidth = windowBounds.getWidth() / columns - (margin + margin / columns);
-		iconHeight = windowBounds.getHeight() / rows - (margin + margin / rows);
+		iconWidth = windowBounds.getWidth() / columns - (margin + (double) margin / columns);
+		iconHeight = windowBounds.getHeight() / rows - (margin + (double) margin / rows);
 		
 		posInit(columns, rows, margin, iconWidth, iconHeight);
 	}
 	
+	private void sortIcons() {
+		Collections.sort(icons);
+	}
+	
 	private void posInit(int columns, int rows, int margin, double width, double height) {
 		int x, y;
+		System.out.println("numPages: " + numPages);
 		if (numPages > 1) {
 			if (page == 0) {
 				initPage0(columns, rows, margin, width, height);
@@ -92,12 +101,23 @@ public class IconManager {
 				
 			}
 		} else {
+			
+			//Initialize Positions
 			for (int i = 0; i < rows; i++)
 				for (int k = 0; k < columns; k++) {
 					x = (int) (margin + k * (margin + width));
 					y = (int) (margin + i * (margin + height));
 					iconPos.add(new int[]{x, y});
 				}
+			
+			//Set Icon Positions
+			for (int i = 0; i < icons.size(); i++) {
+				icons.get(i).setWidth((int) width);
+				icons.get(i).setHeight((int) height);
+				icons.get(i).setX(iconPos.get(i)[0]);
+				icons.get(i).setY(iconPos.get(i)[1]);
+				icons.get(i).setVisible(true);
+			}
 		}
 	}
 	
@@ -105,25 +125,24 @@ public class IconManager {
 		int x, y;
 		
 		//Initialize Positions
-		for (int outOfBounds = 0; outOfBounds < 2; outOfBounds++)
+		for (int outOfBounds = 0; outOfBounds <= 1; outOfBounds++)
 			for (int i = 0; i < rows; i++)
 				for (int k = 0; k < columns; k++) {
-					x = (int) ((margin + k * (margin + width)) + (outOfBounds * windowBounds.getWidth()));
+					x = (int) (margin + k * (margin + width) + outOfBounds * windowBounds.getWidth());
 					y = (int) (margin + i * (margin + height));
 					iconPos.add(new int[]{x, y});
 				}
 		
 		//Set Icon Positions
 		for (int i = 0; i < iconPageSize * 2; i++) {
-			icons.get(i).setWidth((int) width);
-			icons.get(i).setHeight((int) height);
-			
-			if (i < iconPos.size()) {
+			if (i < icons.size()) {
+				icons.get(i).setWidth((int) width);
+				icons.get(i).setHeight((int) height);
+				
 				icons.get(i).setX(iconPos.get(i)[0]);
 				icons.get(i).setY(iconPos.get(i)[1]);
+				
 				icons.get(i).setVisible(true);
-			} else {
-				icons.get(i).setVisible(false);
 			}
 		}
 	}
@@ -188,20 +207,43 @@ public class IconManager {
 		//Draw Icons
 		for (int i = 0; i < icons.size(); i++) {
 			if (icons.get(i).isVisible()) {
-				int x = icons.get(i).getX(), y = icons.get(i).getY(), width = icons.get(i).getWidth(), height = icons.get(i).getHeight(), stringWidth =
-						g.getFontMetrics().stringWidth(Integer.toString(i));
+				int id = icons.get(i).getId(), x = icons.get(i).getX(), y = icons.get(i).getY(), width =
+						icons.get(i).getWidth(), height = icons.get(i).getHeight(), idStringWidth =
+						g.getFontMetrics().stringWidth(Integer.toString(id));
+				
+				Image image = icons.get(i).getImage();
 				
 				try {
-					g.drawRect(x + (int) (window.getMousePosition().getX() - 512) * 2, y, width, height);
-					g.setFont(new Font("Tahoma", Font.PLAIN, 16));
-					g.drawString(Integer.toString(i), x + (width / 2) - (stringWidth / 2) + (int) (window.getMousePosition().getX() - 512) * 2, y + (height / 2));
+					g.setStroke(new BasicStroke(2));
+					
+					
+					if (image != null) {
+						double aspect = (double) image.getHeight(null) / (double) image.getWidth(null);
+						g.drawImage(image, x + (int) (window.getMousePosition().getX() - 512) * 2, y, width,
+						            (int) (width * aspect), null); //Draw Images
+					}
+					else{
+						g.drawRoundRect(x + (int) (window.getMousePosition().getX() - 512) * 2, y, width, height,
+						                15, 15); //Draw Icon Borders
+					}
+					
+					g.setFont(new Font("Tahoma", Font.PLAIN, 20));
+					
+					g.drawString((page + 1) + "/" + numPages, 10, 20); //Draw Page Number
+					
 				} catch (NullPointerException e) {
+					try {
+						Thread.sleep(50);
+					} catch (InterruptedException ex) {
+						return;
+					}
 					return;
 				}
 			}
 		}
 		
 		//Draw Icon Positions
+		/*
 		for (int[] i : iconPos) {
 			try {
 				g.drawOval(i[0] + (int) (window.getMousePosition().getX() - 512) * 2, i[1], 50, 50);
@@ -209,6 +251,8 @@ public class IconManager {
 				return;
 			}
 		}
+		
+		 */
 	}
 	
 	public void clear() {
@@ -223,10 +267,6 @@ public class IconManager {
 		} catch (IOException e) {
 			return null;
 		}
-	}
-	
-	public void drawImage(BufferedImage image, int x, int y, int width, int height) {
-		g.drawImage(image, x, y, width, height, null);
 	}
 	
 	public void setGraphics(Graphics2D g) {

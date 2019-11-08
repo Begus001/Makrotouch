@@ -1,6 +1,5 @@
 package makrotouch.main;
 
-import makrotouch.display.Icon;
 import makrotouch.display.IconManager;
 import makrotouch.display.Window;
 
@@ -50,16 +49,18 @@ public class Main implements Runnable {
 	}
 	
 	private void tick() {
-		System.out.println(icnmgr.getPage() + "/" + (IconManager.getNumPages() - 1));
+	
 	}
 	
 	private void render() {
 		initRender();
 		if (g == null) return;
 		
-		icnmgr.clear();
-		icnmgr.initIcons(4, 2, 75);
-		icnmgr.drawIcons();
+		try {
+			icnmgr.clear();
+			//icnmgr.initIcons(4, 2, 75);
+			icnmgr.drawIcons();
+		} catch (NullPointerException e) { e.printStackTrace(); }
 		
 		g.dispose();
 		bs.show();
@@ -69,7 +70,7 @@ public class Main implements Runnable {
 		bs = window.getCanvas().getBufferStrategy();
 		
 		if (bs == null) {
-			window.getCanvas().createBufferStrategy(3);
+			window.getCanvas().createBufferStrategy(2);
 			return;
 		}
 		

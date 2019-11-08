@@ -4,12 +4,10 @@ import makrotouch.main.FileManager;
 
 import java.awt.*;
 
-public class Icon {
+public class Icon implements Comparable<Icon> {
 	private int x, y, width, height, id;
 	private Image image;
 	private String name;
-	private FileManager flmgr = new FileManager();
-	private boolean dragging = false;
 	private boolean visible = false;
 	
 	public Icon(int x, int y, int width, int height, int id, boolean visible, String name, String image) {
@@ -20,13 +18,14 @@ public class Icon {
 		this.name = name;
 		this.id = id;
 		this.visible = visible;
-		this.image = flmgr.loadImage(image);
+		this.image = FileManager.loadImage(image);
 	}
 	
 	public Icon(int id, String name, String image) {
 		this.name = name;
 		this.id = id;
-		this.image = flmgr.loadImage(image);
+		this.image = FileManager.loadImage(image);
+		System.out.println("icon loaded image " + image);
 	}
 	
 	public boolean isVisible() {
@@ -35,14 +34,6 @@ public class Icon {
 	
 	public void setVisible(boolean visible) {
 		this.visible = visible;
-	}
-	
-	public boolean isDragging() {
-		return dragging;
-	}
-	
-	public void setDragging(boolean dragging) {
-		this.dragging = dragging;
 	}
 	
 	public int getX() {
@@ -85,12 +76,17 @@ public class Icon {
 		this.name = name;
 	}
 	
-	public Image getIcon() {
+	public Image getImage() {
 		return image;
 	}
 	
 	public void setImage(Image image) {
 		this.image = image;
+	}
+	
+	@Override
+	public int compareTo(Icon icon) {
+		return Integer.compare(this.id, icon.getId());
 	}
 	
 	public int getId() {

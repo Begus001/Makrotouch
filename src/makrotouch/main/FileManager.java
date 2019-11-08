@@ -15,10 +15,11 @@ import java.util.ArrayList;
 
 public class FileManager {
 	
-	public static Image loadImage(String path) {
+	public static Image loadImage(String filename) {
 		try {
-			return ImageIO.read(new File(path));
+			return ImageIO.read(new File("res/icons/" + filename));
 		} catch (IOException e) {
+			e.printStackTrace();
 			return null;
 		}
 	}
@@ -26,14 +27,18 @@ public class FileManager {
 	public static ArrayList<Icon> loadIcons(String configPath) {
 		ArrayList<Icon> tmp = new ArrayList<>();
 		try {
-			NodeList icons = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(configPath).getElementsByTagName("icon");
+			NodeList icons =
+					DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(configPath).getElementsByTagName("icon");
 			for (int i = 0; i < icons.getLength(); i++) {
 				Element current = (Element) icons.item(i);
-				tmp.add(new Icon(Integer.parseInt(current.getAttribute("id")), getProperty(current, "name"), getProperty(current, "image_path")));
+				tmp.add(new Icon(Integer.parseInt(current.getAttribute("id")), getProperty(current, "name"),
+				                 getProperty(current, "image_name")));
+				System.out.println("FileManager loaded image name: " + getProperty(current, "image_name"));
 			}
 		} catch (NumberFormatException | SAXException | IOException | ParserConfigurationException e) {
-			return null;
+			e.printStackTrace();
 		}
+		System.out.println("Icons.size: " + tmp.size());
 		
 		return tmp;
 	}

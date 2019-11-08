@@ -7,14 +7,14 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class TouchListener implements MouseListener {
-	public int x, y;
-	
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		Main.getIcnmgr().setPage(Main.getIcnmgr().getPage() + 1);
-		if(Main.getIcnmgr().getPage() == IconManager.getNumPages()){
+		if (Main.getIcnmgr().getPage() == IconManager.getNumPages()) {
 			Main.getIcnmgr().setPage(0);
 		}
+		
+		Main.getIcnmgr().initIcons(4, 2, 75);
 	}
 	
 	@Override
