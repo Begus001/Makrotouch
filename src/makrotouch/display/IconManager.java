@@ -10,15 +10,17 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class IconManager {
-	private static final String configPath = "res/config/makrotouch.xml";
-	private static int numPages;
+	private final String configPath = "res/config/makrotouch.xml";
+	private int numPages;
 	private ArrayList<Icon> icons = new ArrayList<>();
 	private ArrayList<int[]> iconPos = new ArrayList<>();
 	private int iconPageSize = 8;
 	private int page = 0;
-	
 	private Graphics2D g;
 	private Rectangle2D windowBounds;
 	private JFrame window;
@@ -28,11 +30,11 @@ public class IconManager {
 		windowBounds = this.window.getContentPane().getBounds();
 	}
 	
-	public static String getConfigPath() {
+	public String getConfigPath() {
 		return configPath;
 	}
 	
-	public static int getNumPages() {
+	public int getNumPages() {
 		return numPages;
 	}
 	
@@ -88,7 +90,6 @@ public class IconManager {
 	
 	private void posInit(int columns, int rows, int margin, double width, double height) {
 		int x, y;
-		System.out.println("numPages: " + numPages);
 		if (numPages > 1) {
 			if (page == 0) {
 				initPage0(columns, rows, margin, width, height);
@@ -202,51 +203,66 @@ public class IconManager {
 	}
 	
 	public void drawIcons() {
+		if(g == null) return;
 		g.setColor(Color.white);
 		
 		//Draw Icons
 		for (int i = 0; i < icons.size(); i++) {
+			
 			if (icons.get(i).isVisible()) {
-				int id = icons.get(i).getId(), x = icons.get(i).getX(), y = icons.get(i).getY(), width =
-						icons.get(i).getWidth(), height = icons.get(i).getHeight(), idStringWidth =
+				
+				//if (icons.get(i).getX() + offset < 1024 && icons.get(i).getX() + icons.get(i).getWidth() + offset > 0) {
+				
+				int id = icons.get(i).getId(), x = icons.get(i).getX(), y = icons.get(i).getY(), width = icons.get(i).getWidth(), height = icons.get(i).getHeight(), idStringWidth =
 						g.getFontMetrics().stringWidth(Integer.toString(id));
+				
+				String name = icons.get(i).getName();
 				
 				Image image = icons.get(i).getImage();
 				
 				try {
-					g.setStroke(new BasicStroke(2));
 					
+					g.setStroke(new BasicStroke(2)); //Set stroke
+					byte fontSize = 16;
+					g.setFont(new Font("Tahoma", Font.PLAIN, fontSize)); //Set font
 					
-					if (image != null) {
-						double aspect = (double) image.getHeight(null) / (double) image.getWidth(null);
-						g.drawImage(image, x + (int) (window.getMousePosition().getX() - 512) * 2, y, width,
-						            (int) (width * aspect), null); //Draw Images
+					double aspect;
+					
+					if (image != null && name != null) {
+						
+						aspect = (double) image.getHeight(null) / (double) image.getWidth(null);
+						g.drawImage(image, x, (int) (y + height / 2 - (width * aspect) / 2), width, (int) (width * aspect), null); //Draw Images
+						g.drawString(name, x + width / 2 - g.getFontMetrics().stringWidth(name) / 2, y + height + 15); //Draw Names
+						
+					} else if (name != null) {
+						
+						g.drawString(name, x + width / 2 - g.getFontMetrics().stringWidth(name) / 2, y + height / 2 + fontSize / 2); //Draw Names
+						g.drawRoundRect(x, y, width, height, 15, 15); //Draw Icon Borders
+						
+					} else {
+						
+						aspect = (double) image.getHeight(null) / (double) image.getWidth(null);
+						g.drawImage(image, x, (int) (y + height / 2 - (width * aspect) / 2), width, (int) (width * aspect), null); //Draw Images
+						
 					}
-					else{
-						g.drawRoundRect(x + (int) (window.getMousePosition().getX() - 512) * 2, y, width, height,
-						                15, 15); //Draw Icon Borders
-					}
 					
-					g.setFont(new Font("Tahoma", Font.PLAIN, 20));
-					
-					g.drawString((page + 1) + "/" + numPages, 10, 20); //Draw Page Number
 					
 				} catch (NullPointerException e) {
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException ex) {
-						return;
-					}
+					e.printStackTrace();
 					return;
 				}
+				//}
 			}
+			
+			g.setFont(new Font("Tahoma", Font.PLAIN, 25));
+			g.drawString((page + 1) + "/" + numPages, 10, 27); //Draw Page Number
 		}
 		
 		//Draw Icon Positions
 		/*
 		for (int[] i : iconPos) {
 			try {
-				g.drawOval(i[0] + (int) (window.getMousePosition().getX() - 512) * 2, i[1], 50, 50);
+				g.drawOval(i[0] + (int) (mouseX - 512) * 2, i[1], 50, 50);
 			} catch (NullPointerException e) {
 				return;
 			}
@@ -255,7 +271,33 @@ public class IconManager {
 		 */
 	}
 	
+	private String getLocalIP() {
+		String command;
+		if (System.getProperty("os.name").equals("Linux"))
+			command = "ifconfig";
+		else
+			command = "ipconfig";
+		Runtime r = Runtime.getRuntime();
+		Process p = null;
+		try {
+			p = r.exec(command);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		Scanner s = new Scanner(p.getInputStream());
+		
+		StringBuilder sb = new StringBuilder("");
+		while (s.hasNext())
+			sb.append(s.next());
+		String ipconfig = sb.toString();
+		Pattern pt = Pattern.compile("192\\.168\\.[0-9]{1,3}\\.[0-9]{1,3}");
+		Matcher mt = pt.matcher(ipconfig);
+		mt.find();
+		return mt.group();
+	}
+	
 	public void clear() {
+		if(g == null) return;
 		windowBounds = window.getContentPane().getBounds();
 		g.setColor(Color.black);
 		g.fillRect(0, 0, (int) windowBounds.getWidth(), (int) windowBounds.getHeight());

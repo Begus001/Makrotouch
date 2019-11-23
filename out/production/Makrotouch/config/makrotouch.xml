@@ -4,156 +4,166 @@
         <icon id="0">
             <name>Youtube</name>
             <image_name>youtube.png</image_name>
-            <action>
+            <makro>
                 <keyboard_type>I like Dogz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
                 <screenshot></screenshot>
-            </action>
+            </makro>
         </icon>
         <icon id="1">
-            <name>Take Screenshot</name>
-            <image_name>screenshot.png</image_name>
-            <action>
+            <name>Screenshot</name>
+            <image_name>word.png</image_name>
+            <makro>
                 <keyboard_type>I like Dogz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
                 <screenshot></screenshot>
-            </action>
+            </makro>
         </icon>
         <icon id="2">
             <name>CTRL + Z</name>
             <image_name>ctrlz.png</image_name>
-            <action>
+            <makro>
                 <keyboard_type>I like Dogz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
                 <screenshot></screenshot>
-            </action>
+            </makro>
         </icon>
         <icon id="3">
-            <name>Start Recording</name>
-            <image_name></image_name>
-            <action>
+            <name>Record</name>
+            <image_name>record.png</image_name>
+            <makro>
                 <keyboard_type>I like Dogz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
                 <screenshot></screenshot>
-            </action>
+            </makro>
         </icon>
         <icon id="4">
-            <name>Start Recording</name>
-            <image_name>record.png</image_name>
-            <action>
+            <name>Render Sequence</name>
+            <image_name>ae.png</image_name>
+            <makro>
                 <keyboard_type>I like Dogz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
                 <screenshot></screenshot>
-            </action>
-        </icon>
-        <icon id="5">
-            <name>Start Recording</name>
-            <image_name></image_name>
-            <action>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </action>
+            </makro>
         </icon>
         <icon id="6">
-            <name>Start Recording</name>
-            <image_name>record.png</image_name>
-            <action>
+            <name>Play/Pause</name>
+            <image_name>play.png</image_name>
+            <makro>
                 <keyboard_type>I like Dogz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
                 <screenshot></screenshot>
-            </action>
+            </makro>
         </icon>
         <icon id="7">
-            <name>Start Recording</name>
-            <image_name>record.png</image_name>
-            <action>
+            <name>Next</name>
+            <image_name>next.png</image_name>
+            <makro>
                 <keyboard_type>I like Dogz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
                 <screenshot></screenshot>
-            </action>
+            </makro>
+        </icon>
+        <icon id="5">
+            <name>Previous</name>
+            <image_name>prev.png</image_name>
+            <makro>
+                <keyboard_type>I like Dogz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </makro>
         </icon>
         <icon id="8">
-            <name>Start Recording</name>
-            <image_name>record.png</image_name>
-            <action>
+            <name>Spotify</name>
+            <image_name>spotify.png</image_name>
+            <makro>
                 <keyboard_type>I like Dogz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
                 <screenshot></screenshot>
-            </action>
+            </makro>
         </icon>
         <icon id="9">
-            <name>Start Recording</name>
-            <image_name>record.png</image_name>
-            <action>
+            <name>Notepad</name>
+            <image_name>notepad.png</image_name>
+            <makro>
                 <keyboard_type>I like Dogz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
                 <screenshot></screenshot>
-            </action>
+            </makro>
         </icon>
         <icon id="10">
-            <name>Start Recording</name>
-            <image_name>record.png</image_name>
-            <action>
+            <name></name>
+            <image_name>youtube.png</image_name>
+            <makro>
                 <keyboard_type>I like Dogz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
                 <screenshot></screenshot>
-            </action>
+            </makro>
         </icon>
         <icon id="11">
-            <name>Start Recording</name>
-            <image_name>record.png</image_name>
-            <action>
+            <name></name>
+            <image_name>screenshot.png</image_name>
+            <makro>
                 <keyboard_type>I like Dogz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
                 <screenshot></screenshot>
-            </action>
-        </icon>
-        <icon id="16">
-            <name>Start Recording</name>
-            <image_name>record.png</image_name>
-            <action>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </action>
-        </icon>
-        <icon id="14">
-            <name>Start Recording</name>
-            <image_name>record.png</image_name>
-            <action>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </action>
-        </icon>
-        <icon id="13">
-            <name>Start Recording</name>
-            <image_name>record.png</image_name>
-            <action>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </action>
+            </makro>
         </icon>
         <icon id="12">
-            <name>Start Recording</name>
-            <image_name>record.png</image_name>
-            <action>
+            <name></name>
+            <image_name>ctrlz.png</image_name>
+            <makro>
                 <keyboard_type>I like Dogz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
                 <screenshot></screenshot>
-            </action>
+            </makro>
+        </icon>
+        <icon id="13">
+            <name></name>
+            <image_name>record.png</image_name>
+            <makro>
+                <keyboard_type>I like Dogz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </makro>
+        </icon>
+        <icon id="14">
+            <name></name>
+            <image_name>ae.png</image_name>
+            <makro>
+                <keyboard_type>I like Dogz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </makro>
         </icon>
         <icon id="15">
-            <name>Start Recording</name>
-            <image_name>record.png</image_name>
-            <action>
+            <name></name>
+            <image_name>spotify.png</image_name>
+            <makro>
                 <keyboard_type>I like Dogz</keyboard_type>
                 <keyboard_input>CTRL+A</keyboard_input>
                 <screenshot></screenshot>
-            </action>
+            </makro>
         </icon>
+        <icon id="16">
+            <name>Icon 16</name>
+            <image_name></image_name>
+            <makro>
+                <keyboard_type>I like Dogz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </makro>
+        </icon>
+        <icon id="17">
+            <name>Icon 17</name>
+            <image_name></image_name>
+            <makro>
+                <keyboard_type>I like Dogz</keyboard_type>
+                <keyboard_input>CTRL+A</keyboard_input>
+                <screenshot></screenshot>
+            </makro>
+        </icon>
+        
         
     </icons>
     <settings>

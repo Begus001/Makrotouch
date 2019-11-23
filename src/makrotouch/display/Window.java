@@ -1,10 +1,12 @@
 package makrotouch.display;
 
 import makrotouch.events.TouchListener;
+import makrotouch.main.Main;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
 
 public class Window extends JFrame {
 	
@@ -38,9 +40,6 @@ public class Window extends JFrame {
 		
 		canvas = new Canvas();
 		canvas.setPreferredSize(size);
-		
-		//canvas.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new BufferedImage(16, 16,
-		//BufferedImage.TYPE_INT_ARGB),new Point(0, 0), "blank"));
 		
 		canvas.addMouseListener(new TouchListener());
 		

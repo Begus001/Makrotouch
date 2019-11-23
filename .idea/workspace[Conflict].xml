@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Makrotouch" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7c0c1c9b-c4d8-4b57-989f-5906e2053d92" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Makrotouch_build009.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/icons/ae.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/icons/spotify.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Makrotouch.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Makrotouch.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/config/makrotouch.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/config/makrotouch.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/display (1)/IconManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/display (1)/IconManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/display (2)/Icon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/display (2)/Icon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/display (2)/IconManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/display (2)/IconManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/display/IconManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/display/IconManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/events/TouchListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/events/TouchListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/main (2)/FileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/main (2)/FileManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/main (2)/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/main (2)/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/config/makrotouch.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/config/makrotouch.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/makrotouch/display/Icon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/makrotouch/display/Icon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/makrotouch/display/IconManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/makrotouch/display/IconManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/makrotouch/events/TouchListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/makrotouch/events/TouchListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/makrotouch/main/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/makrotouch/main/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/makrotouch/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/makrotouch/main/Main.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\admin\Google Drive\Projects\Eclipse\Makrotouch\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1SLaFDuqCvf30tjh5jE90aK9BPV" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Google Drive\Projects\Java\Makrotouch" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="makrotouch.main.Launcher" />
+      <module name="Makrotouch" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="makrotouch.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Launcher" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7c0c1c9b-c4d8-4b57-989f-5906e2053d92" name="Default Changelist" comment="" />
+      <created>1571345223875</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571345223875</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Implemented XML Parsing&#10;&#10;Icons can now be added or removed by editing the &quot;makrotouch.xml&quot; file.&#10;The icon images and names are also displayed.&#10;v0.0.2">
+      <created>1571438202295</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571438202295</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Implemented XML Parsing&#10;&#10;Icons can now be added or removed by editing the &quot;makrotouch.xml&quot; file.&#10;The icon images and names are also displayed.&#10;v0.0.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented XML Parsing&#10;&#10;Icons can now be added or removed by editing the &quot;makrotouch.xml&quot; file.&#10;The icon images and names are also displayed.&#10;v0.0.2" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+</project>
