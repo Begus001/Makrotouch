@@ -7,17 +7,15 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 public class TouchListener implements MouseListener, MouseMotionListener {
 	
-	private static boolean released = true;
-	private static ScheduledExecutorService releaseTimer;
+	//private static boolean released = true;
+	//private static ScheduledExecutorService releaseTimer;
 	private ArrayList<Icon> icons;
 	private ArrayList<int[]> iconPos;
 	
+	/*
 	private Runnable releaseTimeout = () -> {
 		released = true;
 		System.out.println("Icons released");
@@ -35,6 +33,8 @@ public class TouchListener implements MouseListener, MouseMotionListener {
 		return releaseTimer;
 	}
 	
+	 */
+	
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		//Next page trigger area
@@ -50,45 +50,57 @@ public class TouchListener implements MouseListener, MouseMotionListener {
 		} else if (e.getX() >= 960 && e.getY() <= 50) { //DEV
 			System.exit(0);
 		}
+		/*
+		else if (e.getX() <= 70 && e.getY() >= 525) {
+			released = true;
+		}
+		
+		 */
 		
 		icons = Main.getIcnmgr().getIcons();
 		iconPos = Main.getIcnmgr().getIconPos();
 		//Icon trigger detection
-		if (released) {
-			for (Icon i : icons) {
-				if (e.getX() >= i.getX() && e.getX() <= (i.getX() + i.getWidth()) && e.getY() >= i.getY() && e.getY() <= (i.getY() + i.getHeight())) {
-					if (i.getName() != null) {
-						
-						if (Main.getConnection().SendIcon(i) == 0) {
+		//if (released) {
+		for (Icon i : icons) {
+			if (e.getX() >= i.getX() && e.getX() <= (i.getX() + i.getWidth()) && e.getY() >= i.getY() && e.getY() <= (i.getY() + i.getHeight())) {
+				if (i.getName() != null) {
+					
+					if (Main.getConnection().SendIcon(i) == 0) {
+							/*
 							released = false;
-							System.out.println("Icon " + i.getName() + " triggered!");
 							System.out.println("Icons locked");
 							
-							iconPressAnimation(i);
-							
-							releaseTimer = Executors.newSingleThreadScheduledExecutor();
-							releaseTimer.schedule(releaseTimeout, 6, TimeUnit.SECONDS);
-						} else {
-							System.out.println("Couldn't send execute command!");
-						}
+							 */
 						
+						iconPressAnimation(i);
+						System.out.println("Icon " + i.getName() + " triggered!");
+						
+						//releaseTimer = Executors.newSingleThreadScheduledExecutor();
+						//releaseTimer.schedule(releaseTimeout, 6, TimeUnit.SECONDS);
 					} else {
-						if (Main.getConnection().SendIcon(i) == 0) {
+						System.out.println("Couldn't send execute command!");
+					}
+					
+				} else {
+					if (Main.getConnection().SendIcon(i) == 0) {
+							/*
 							released = false;
-							System.out.println("Icon " + i.getImage_name() + " triggered!");
 							System.out.println("Icons locked");
 							
-							iconPressAnimation(i);
-							
-							releaseTimer = Executors.newSingleThreadScheduledExecutor();
-							releaseTimer.schedule(releaseTimeout, 6, TimeUnit.SECONDS);
-						} else {
-							System.out.println("Couldn't send execute command!");
-						}
+							 */
+						
+						iconPressAnimation(i);
+						System.out.println("Icon " + i.getImage_name() + " triggered!");
+						
+						//releaseTimer = Executors.newSingleThreadScheduledExecutor();
+						//releaseTimer.schedule(releaseTimeout, 6, TimeUnit.SECONDS);
+					} else {
+						System.out.println("Couldn't send execute command!");
 					}
 				}
 			}
 		}
+		//}
 	}
 	
 	private void iconPressAnimation(Icon i) {

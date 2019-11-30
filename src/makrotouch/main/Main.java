@@ -10,7 +10,7 @@ import java.io.IOException;
 public class Main implements Runnable {
 	
 	//MUST BE TRUE WHEN BUILDING FOR RELEASE
-	private static boolean release = false;
+	private static boolean release = true;
 	////////////////////////////////////////
 	
 	private static int programState = 0;
@@ -119,8 +119,8 @@ public class Main implements Runnable {
 		}
 		
 		g = (Graphics2D) bs.getDrawGraphics();
-		g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+		//g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+		//g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		icnmgr.setGraphics(g);
 	}
 	

@@ -1,7 +1,6 @@
 package makrotouch.main;
 
 import makrotouch.display.Icon;
-import makrotouch.events.TouchListener;
 
 import java.io.IOException;
 import java.net.*;
@@ -33,11 +32,15 @@ public class Connection implements Runnable {
 				if (receivedMessage.equals(("refresh"))) {
 					System.out.println("Refreshing Icons");
 					Main.setProgramState(1);
-				} else if (receivedMessage.equals(("release"))) {
-					TouchListener.getReleaseTimer().shutdownNow();
+				}
+				/*
+				else if (receivedMessage.equals(("release"))) {
+					//TouchListener.getReleaseTimer().shutdownNow();
 					TouchListener.setReleased(true);
 					System.out.println("Icons released");
 				}
+				
+				 */
 				
 				Thread.sleep(250);
 			}
@@ -51,7 +54,8 @@ public class Connection implements Runnable {
 			String keepAliveMessage = "makrotouch " + localIP;
 			
 			keepAliveSocket = new DatagramSocket();
-			DatagramPacket sendPacket = new DatagramPacket(keepAliveMessage.getBytes(), keepAliveMessage.length(), InetAddress.getByName(address), sendPort);
+			DatagramPacket sendPacket = new DatagramPacket(keepAliveMessage.getBytes(), keepAliveMessage.length()
+					, InetAddress.getByName(address), sendPort);
 			
 			while (true) {
 				keepAliveSocket.send(sendPacket);
@@ -74,7 +78,8 @@ public class Connection implements Runnable {
 			if (connected) {
 				sendSocket = new DatagramSocket();
 				String id = "exec " + icon.getId();
-				DatagramPacket sendPacket = new DatagramPacket(id.getBytes(), id.length(), InetAddress.getByName(address), sendPort);
+				DatagramPacket sendPacket = new DatagramPacket(id.getBytes(), id.length(),
+				                                               InetAddress.getByName(address), sendPort);
 				sendSocket.send(sendPacket);
 				return 0;
 			} else {
@@ -227,7 +232,8 @@ public class Connection implements Runnable {
 				
 				String identifier = "makrotouch ";
 				if (receivedMessage.contains(identifier)) {
-					address = receivedMessage.substring(receivedMessage.indexOf(identifier) + identifier.length());
+					address =
+							receivedMessage.substring(receivedMessage.indexOf(identifier) + identifier.length());
 					connected = true;
 					receiveSocket.close();
 					System.out.println("Connected to " + address);

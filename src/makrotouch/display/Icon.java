@@ -19,21 +19,21 @@ public class Icon implements Comparable<Icon> {
 		this.id = id;
 		this.visible = visible;
 		this.image_name = image;
-		this.image = FileManager.loadImage(image);
+		this.image = FileManager.loadImage(image, this);
 	}
 	
 	public Icon(int id, String name, String image) {
 		this.name = name;
 		this.id = id;
 		this.image_name = image;
-		this.image = FileManager.loadImage(image);
+		this.image = FileManager.loadImage(image, this);
 	}
 	
 	public Icon(int id, String name_image, boolean imageOnly) {
 		if (imageOnly) {
 			this.id = id;
 			this.image_name = name_image;
-			this.image = FileManager.loadImage(name_image);
+			this.image = FileManager.loadImage(name_image, this);
 		} else {
 			this.name = name_image;
 			this.id = id;

@@ -16,6 +16,19 @@ import java.util.ArrayList;
 
 public class FileManager {
 	
+	public static Image loadImage(String filename, Icon sender) {
+		try {
+			if (!filename.equals("")) {
+				return ImageIO.read(new File("res/icons/" + filename));
+			} else {
+				return null;
+			}
+		} catch (IOException e) {
+			System.out.println("Couldn't load file " + filename + " of Icon " + sender.getId());
+			return null;
+		}
+	}
+	
 	public static Image loadImage(String filename) {
 		try {
 			if (!filename.equals("")) {
@@ -24,7 +37,7 @@ public class FileManager {
 				return null;
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Couldn't load file " + filename);
 			return null;
 		}
 	}

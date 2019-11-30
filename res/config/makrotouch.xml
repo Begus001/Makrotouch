@@ -1,171 +1,86 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <makrotouch>
-    <icons>
-        <icon id="0">
-            <name>Youtube</name>
-            <image_name>youtube.png</image_name>
-            <makro>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </makro>
-        </icon>
-        <icon id="1">
-            <name>Screenshot</name>
-            <image_name>word.png</image_name>
-            <makro>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </makro>
-        </icon>
-        <icon id="2">
-            <name>CTRL + Z</name>
-            <image_name>ctrlz.png</image_name>
-            <makro>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </makro>
-        </icon>
-        <icon id="3">
-            <name>Record</name>
-            <image_name>record.png</image_name>
-            <makro>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </makro>
-        </icon>
-        <icon id="4">
-            <name>Render Sequence</name>
-            <image_name>ae.png</image_name>
-            <makro>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </makro>
-        </icon>
-        <icon id="6">
-            <name>Play/Pause</name>
-            <image_name>play.png</image_name>
-            <makro>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </makro>
-        </icon>
-        <icon id="7">
-            <name>Next</name>
-            <image_name>next.png</image_name>
-            <makro>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </makro>
-        </icon>
-        <icon id="5">
-            <name>Previous</name>
-            <image_name>prev.png</image_name>
-            <makro>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </makro>
-        </icon>
-        <icon id="8">
-            <name>Spotify</name>
-            <image_name>spotify.png</image_name>
-            <makro>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </makro>
-        </icon>
-        <icon id="9">
-            <name>Notepad</name>
-            <image_name>notepad.png</image_name>
-            <makro>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </makro>
-        </icon>
-        <icon id="10">
-            <name></name>
-            <image_name>youtube.png</image_name>
-            <makro>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </makro>
-        </icon>
-        <icon id="11">
-            <name></name>
-            <image_name>screenshot.png</image_name>
-            <makro>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </makro>
-        </icon>
-        <icon id="12">
-            <name></name>
-            <image_name>ctrlz.png</image_name>
-            <makro>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </makro>
-        </icon>
-        <icon id="13">
-            <name></name>
-            <image_name>record.png</image_name>
-            <makro>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </makro>
-        </icon>
-        <icon id="14">
-            <name></name>
-            <image_name>ae.png</image_name>
-            <makro>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </makro>
-        </icon>
-        <icon id="15">
-            <name></name>
-            <image_name>spotify.png</image_name>
-            <makro>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </makro>
-        </icon>
-        <icon id="16">
-            <name>Icon 16</name>
-            <image_name></image_name>
-            <makro>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </makro>
-        </icon>
-        <icon id="17">
-            <name>Icon 17</name>
-            <image_name></image_name>
-            <makro>
-                <keyboard_type>I like Dogz</keyboard_type>
-                <keyboard_input>CTRL+A</keyboard_input>
-                <screenshot></screenshot>
-            </makro>
-        </icon>
-        
-        
-    </icons>
-    <settings>
-    </settings>
+  <icons>
+    <icon id="9">
+      <name>Word</name>
+      <image_name>word.png</image_name>
+      <makro>
+        <open_app>C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE</open_app>
+      </makro>
+    </icon>
+    <icon id="0">
+      <name>HTL</name>
+      <image_name>htl.png</image_name>
+      <makro>
+        <open_website>https://htl.moedling.at/home/</open_website>
+      </makro>
+    </icon>
+    <icon id="2">
+      <name>Play/Pause</name>
+      <image_name>play.png</image_name>
+      <makro>
+        <play_pause />
+      </makro>
+    </icon>
+    <icon id="1">
+      <name>Next</name>
+      <image_name>next.png</image_name>
+      <makro>
+        <media_next />
+      </makro>
+    </icon>
+    <icon id="3">
+      <name>Previous</name>
+      <image_name>prev.png</image_name>
+      <makro>
+        <media_prev />
+      </makro>
+    </icon>
+    <icon id="4">
+      <name>Open Download</name>
+      <image_name>download.png</image_name>
+      <makro>
+        <open_dir>C:\Users\Manuel\Downloads</open_dir>
+      </makro>
+    </icon>
+    <icon id="5">
+      <name>Demo</name>
+      <image_name>notepad.png</image_name>
+      <makro>
+        <open_app>C:\Windows\system32\notepad.exe</open_app>
+        <wait>1000</wait>
+        <keyboard_input>Lorem ipsum dolor sit amet, 
+        consectetur adipiscing elit, sed do 
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+        ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+         deserunt mollit anim id est laborum.</keyboard_input>
+      </makro>
+    </icon>
+    <icon id="6">
+      <name>Icon 7</name>
+      <image_name>
+      </image_name>
+      <makro>
+      </makro>
+    </icon>
+    <icon id="7">
+      <name>Icon</name>
+      <image_name>
+      </image_name>
+      <makro>
+      </makro>
+    </icon>
+    <icon id="8">
+      <name>Icon</name>
+      <image_name>
+      </image_name>
+      <makro>
+      </makro>
+    </icon>
+  </icons>
+  <settings>
+  </settings>
 </makrotouch>
