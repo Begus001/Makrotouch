@@ -124,7 +124,11 @@ public class Connection implements Runnable {
 		if (!Main.isRelease()) {
 			String command;
 			if (System.getProperty("os.name").equals("Linux"))
-				command = "ifconfig";
+				if(!Main.isRelease()) {
+					command = "ip a";
+				} else {
+					command = "ifconfig";
+				}
 			else
 				command = "ipconfig";
 			Runtime r = Runtime.getRuntime();
