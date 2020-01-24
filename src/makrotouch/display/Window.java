@@ -36,7 +36,6 @@ public class Window extends JFrame {
         setPreferredSize(size);
 
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         if(!layout) {
             canvas = new Canvas();
@@ -44,9 +43,12 @@ public class Window extends JFrame {
 
             canvas.addMouseListener(new TouchListener());
 
+            setDefaultCloseOperation(EXIT_ON_CLOSE);
+
             add(canvas);
         } else {
-        	this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        	this.getContentPane().setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
+            setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		}
 
         pack();

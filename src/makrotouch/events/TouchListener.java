@@ -2,6 +2,7 @@ package makrotouch.events;
 
 import makrotouch.display.Icon;
 import makrotouch.main.Main;
+import makrotouch.settings.SettingsManager;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -48,7 +49,7 @@ public class TouchListener implements MouseListener, MouseMotionListener {
 			
 			//Exit trigger area
 		} else if (e.getX() >= 960 && e.getY() <= 50) { //DEV
-			System.exit(0);
+			new SettingsManager();
 		}
 		/*
 		else if (e.getX() <= 70 && e.getY() >= 525) {
