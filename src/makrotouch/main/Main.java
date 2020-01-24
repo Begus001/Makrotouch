@@ -25,7 +25,7 @@ public class Main implements Runnable {
 	
 	public Main() {
 		if (!release) {
-			window = new Window("Makrotouch", 1024, 600, true, false);
+			window = new Window("Makrotouch", 1024, 600, true, false, false);
 		} else {
 			window = new Window("Makrotouch");
 		}
