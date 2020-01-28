@@ -19,8 +19,9 @@ public class SettingsManager {
     private JButton btConnect, btCancel, btUp, btDown;
     private JList liWifi;
     private JLabel lbLoading;
-    
+
     private ArrayList<String> wifiNetworks;
+    private String[] wifiNetworksFinal;
 
     private int ESSIDPos, infraPos;
 
@@ -32,15 +33,14 @@ public class SettingsManager {
         }
 
         wifiNetworks = new ArrayList<>();
+
         lbLoading = new JLabel("Loading WiFi Networks...", JLabel.CENTER);
 
         initLoading();
         initNetworks();
-        initElem();
     }
 
     private void initLoading() {
-        lbLoading.setPreferredSize(new Dimension(100, 20));
         lbLoading.setMaximumSize(new Dimension(100, 20));
         lbLoading.setMinimumSize(new Dimension(100, 20));
         lbLoading.setVisible(true);
@@ -49,41 +49,60 @@ public class SettingsManager {
     }
 
     private void initNetworks() {
-        try {
-            System.out.print("Fetching WiFi networks...");
-            Process wifiCommand = Runtime.getRuntime().exec("nmcli dev wifi", null);
+        new Thread(() -> {
+            try {
+                System.out.print("Fetching WiFi networks...");
+                Process wifiCommand = Runtime.getRuntime().exec("nmcli dev wifi", null);
 
-            BufferedReader commandOutputReader = new BufferedReader(new InputStreamReader(wifiCommand.getInputStream()));
-            StringBuilder output = new StringBuilder();
-            String currentLine;
-            int i = 0;
-            while ((currentLine = commandOutputReader.readLine()) != null) {
+                BufferedReader commandOutputReader = new BufferedReader(new InputStreamReader(wifiCommand.getInputStream()));
+                StringBuilder output = new StringBuilder();
+                String currentLine;
+                int i = 0;
+                while ((currentLine = commandOutputReader.readLine()) != null) {
 
-                if(i == 0) {
-                    ESSIDPos = currentLine.indexOf("SSID");
-                    infraPos = currentLine.indexOf("MODE");
-                } else {
-                    wifiNetworks.add(currentLine.substring(ESSIDPos, infraPos).trim());
+                    if (i == 0) {
+                        ESSIDPos = currentLine.indexOf("SSID");
+                        infraPos = currentLine.indexOf("MODE");
+                    } else {
+                        if (!wifiNetworks.contains(currentLine.substring(ESSIDPos, infraPos).trim())) {
+                            wifiNetworks.add(currentLine.substring(ESSIDPos, infraPos).trim());
+                        }
+                    }
+
+                    output.append(currentLine + "\n");
+                    i++;
                 }
 
-                output.append(currentLine + "\n");
-                i++;
+                System.out.println("done");
+                Thread.sleep(500);
+
+                System.out.println(output);
+
+                wifiNetworks.forEach(System.out::println);
+
+                wifiCommand.destroy();
+
+                initElem();
+
+            } catch (IOException | InterruptedException e) {
+
             }
+        }).start();
 
-            System.out.println("done");
-            Thread.sleep(500);
-            System.out.println(output);
-
-            wifiNetworks.forEach(System.out::println);
-
-            wifiCommand.destroy();
-
-        } catch (IOException | InterruptedException e) {
-
-        }
     }
 
     private void initElem() {
 
+        lbLoading.setVisible(false);
+        window.getContentPane().remove(lbLoading);
+
+        liWifi = new JList(wifiNetworks.toArray());
+
+        liWifi.setPreferredSize(new Dimension(600, 400));
+        liWifi.setMaximumSize(new Dimension(600, 400));
+        liWifi.setMinimumSize(new Dimension(600, 400));
+        liWifi.setVisible(true);
+        window.getContentPane().add(liWifi);
+        window.pack();
     }
 }
