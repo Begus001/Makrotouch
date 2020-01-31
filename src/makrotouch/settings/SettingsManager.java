@@ -41,8 +41,10 @@ public class SettingsManager {
     }
 
     private void initLoading() {
-        lbLoading.setMaximumSize(new Dimension(100, 20));
-        lbLoading.setMinimumSize(new Dimension(100, 20));
+        lbLoading.setPreferredSize(new Dimension((int) screenBounds.getWidth(), 40));
+        lbLoading.setMaximumSize(new Dimension((int) screenBounds.getWidth(), 40));
+        lbLoading.setMinimumSize(new Dimension((int) screenBounds.getWidth(), 40));
+        lbLoading.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
         lbLoading.setVisible(true);
         window.getContentPane().add(lbLoading);
         window.pack();
@@ -74,7 +76,6 @@ public class SettingsManager {
                 }
 
                 System.out.println("done");
-                Thread.sleep(500);
 
                 System.out.println(output);
 
@@ -84,7 +85,7 @@ public class SettingsManager {
 
                 initElem();
 
-            } catch (IOException | InterruptedException e) {
+            } catch (IOException e) {
 
             }
         }).start();
@@ -96,13 +97,30 @@ public class SettingsManager {
         lbLoading.setVisible(false);
         window.getContentPane().remove(lbLoading);
 
-        liWifi = new JList(wifiNetworks.toArray());
+        btUp = new JButton("UP");
+        btUp.setPreferredSize(new Dimension(100, 50));
+        btUp.setMaximumSize(new Dimension(100, 50));
+        btUp.setMinimumSize(new Dimension(100, 50));
+        btUp.setBackground(Color.GREEN);
+        btUp.setVisible(true);
+        window.pack();
+        window.getContentPane().add(btUp);
 
+        liWifi = new JList(wifiNetworks.toArray());
         liWifi.setPreferredSize(new Dimension(600, 400));
         liWifi.setMaximumSize(new Dimension(600, 400));
         liWifi.setMinimumSize(new Dimension(600, 400));
         liWifi.setVisible(true);
-        window.getContentPane().add(liWifi);
         window.pack();
+        window.getContentPane().add(liWifi);
+
+        btDown = new JButton("DOWN");
+        btDown.setPreferredSize(new Dimension(100, 50));
+        btDown.setMaximumSize(new Dimension(100, 50));
+        btDown.setMinimumSize(new Dimension(100, 50));
+        btDown.setBackground(Color.RED);
+        btDown.setVisible(true);
+        window.pack();
+        window.getContentPane().add(btDown);
     }
 }
