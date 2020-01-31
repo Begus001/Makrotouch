@@ -49,7 +49,7 @@ public class TouchListener implements MouseListener, MouseMotionListener {
 			
 			//Exit trigger area
 		} else if (e.getX() >= 960 && e.getY() <= 50) { //DEV
-			new SettingsManager();
+			Main.setProgramState(2);
 		}
 		/*
 		else if (e.getX() <= 70 && e.getY() >= 525) {
