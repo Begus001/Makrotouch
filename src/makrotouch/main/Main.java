@@ -11,7 +11,7 @@ import java.io.IOException;
 public class Main implements Runnable {
 	
 	//MUST BE TRUE WHEN BUILDING FOR RELEASE
-	private static boolean release = false;
+	private static boolean release = true;
 	////////////////////////////////////////
 	
 	private static int programState = 0;

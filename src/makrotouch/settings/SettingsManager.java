@@ -8,6 +8,9 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class SettingsManager {
@@ -71,16 +74,6 @@ public class SettingsManager {
 	
 	private void initNetworks() {
 		new Thread(() -> {
-			for(int i = 0; i < 60; i++) {
-				wifiNetworks.add("Wifi Network " + i);
-			}
-			
-			wifiNetworksVisible.clear();
-			
-			for(int i = scrollIndex; i < listSize + scrollIndex; i++) {
-				wifiNetworksVisible.add(i, wifiNetworks.get(i));
-			}
-            /*
             try {
                 
                 System.out.print("Fetching WiFi networks...");
@@ -101,15 +94,13 @@ public class SettingsManager {
                 wifiNetworks.forEach(System.out::println);
 
                 wifiCommand.destroy();
-                
-                 */
 			
 			initElem();
            
-           /* } catch (IOException e) {
+            } catch (IOException e) {
                 javax.swing.JOptionPane.showMessageDialog(this.getWindow(), "Couldn't fetch wifi networks!");
                 window.dispose();
-            } */
+            }
 		}).start();
 		
 	}
