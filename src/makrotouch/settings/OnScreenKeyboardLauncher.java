@@ -11,7 +11,7 @@ public class OnScreenKeyboardLauncher implements FocusListener {
 			System.out.println("Launching keyboard");
 			Runtime.getRuntime().exec("matchbox-keyboard");
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Couldn't open on-screen keyboard");
 		}
 	}
 
@@ -20,7 +20,7 @@ public class OnScreenKeyboardLauncher implements FocusListener {
 		try {
 			Runtime.getRuntime().exec("killall matchbox-keyboa");
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Couldn't dispose on-screen keyboard");
 		}
 	}
 }

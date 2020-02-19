@@ -5,9 +5,7 @@ import makrotouch.main.Main;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -39,6 +37,8 @@ public class SettingsManager {
 			window = new Window("Settings", 1024, 600, false, true, true);
 		}
 		
+		window.setExtendedState(window.getExtendedState()|JFrame.MAXIMIZED_BOTH);
+		
 		window.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
@@ -48,6 +48,37 @@ public class SettingsManager {
 			@Override
 			public void windowClosed(WindowEvent e) {
 				open = false;
+			}
+		});
+		
+		window.addComponentListener(new ComponentListener() {
+			@Override
+			public void componentResized(ComponentEvent componentEvent) {
+				window.setMinimumSize(new Dimension(1024, 600));
+			}
+			
+			@Override
+			public void componentMoved(ComponentEvent componentEvent) {
+				window.setExtendedState(window.getExtendedState()|JFrame.MAXIMIZED_BOTH);
+				window.setLocationRelativeTo(null);
+			}
+			
+			@Override
+			public void componentShown(ComponentEvent componentEvent) {
+			
+			}
+			
+			@Override
+			public void componentHidden(ComponentEvent componentEvent) {
+				window.dispose();
+			}
+		});
+		
+		window.addWindowStateListener(new WindowAdapter() {
+			@Override
+			public void windowStateChanged(WindowEvent windowEvent) {
+				window.setExtendedState(window.getExtendedState()|JFrame.MAXIMIZED_BOTH);
+				window.setLocationRelativeTo(null);
 			}
 		});
 		
@@ -98,7 +129,7 @@ public class SettingsManager {
 			initElem();
            
             } catch (IOException e) {
-                javax.swing.JOptionPane.showMessageDialog(this.getWindow(), "Couldn't fetch wifi networks!");
+                javax.swing.JOptionPane.showMessageDialog(this.getWindow(), "Couldn't fetch WiFi networks!");
                 window.dispose();
             }
 		}).start();

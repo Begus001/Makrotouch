@@ -25,11 +25,11 @@ public class Connection implements Runnable {
 			byte[] receiveBuffer = new byte[64];
 			DatagramPacket receivePacket = new DatagramPacket(receiveBuffer, receiveBuffer.length);
 			
-			while (true) {
+			while(true) {
 				receiveSocket.receive(receivePacket);
 				String receivedMessage = new String(receivePacket.getData(), 0, receivePacket.getLength());
 				
-				if (receivedMessage.equals(("refresh"))) {
+				if(receivedMessage.equals(("refresh"))) {
 					System.out.println("Refreshing Icons");
 					Main.setProgramState(1);
 				}
@@ -44,8 +44,10 @@ public class Connection implements Runnable {
 				
 				Thread.sleep(250);
 			}
-		} catch (IOException | InterruptedException e) {
-			e.printStackTrace();
+		} catch(IOException e) {
+			System.out.println("Couldn't listen for commands");
+		} catch(InterruptedException e) {
+			System.out.println("Thread sleep interrupted");
 		}
 	};
 	
@@ -57,12 +59,14 @@ public class Connection implements Runnable {
 			DatagramPacket sendPacket = new DatagramPacket(keepAliveMessage.getBytes(), keepAliveMessage.length()
 					, InetAddress.getByName(address), sendPort);
 			
-			while (true) {
+			while(true) {
 				keepAliveSocket.send(sendPacket);
 				Thread.sleep(250);
 			}
-		} catch (IOException | InterruptedException e) {
-			e.printStackTrace();
+		} catch(IOException e) {
+			System.out.println("Couldn't send heartbeat");
+		} catch(InterruptedException e) {
+			System.out.println("Thread sleep interrupted");
 		}
 	};
 	
@@ -75,18 +79,18 @@ public class Connection implements Runnable {
 	
 	public int SendIcon(Icon icon) {
 		try {
-			if (connected) {
+			if(connected) {
 				sendSocket = new DatagramSocket();
 				String id = "exec " + icon.getId();
 				DatagramPacket sendPacket = new DatagramPacket(id.getBytes(), id.length(),
-				                                               InetAddress.getByName(address), sendPort);
+						InetAddress.getByName(address), sendPort);
 				sendSocket.send(sendPacket);
 				return 0;
 			} else {
 				return -1;
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch(IOException e) {
+			System.out.println("Couldn't send execute command");
 			return -1;
 		}
 	}
@@ -96,34 +100,34 @@ public class Connection implements Runnable {
 		do {
 			try {
 				localIP = getLocalIP();
-			} catch (SocketException e) {
-				e.printStackTrace();
+			} catch(SocketException e) {
+				System.out.println("Couldn't get local IP");
 			}
-		} while (localIP == null);
+		} while(localIP == null);
 		
 		do {
 			ListenForIP();
-		} while (!connected);
+		} while(!connected);
 		
 		Thread commandListener = new Thread(CommandListening);
 		commandListener.start();
 		
 		Thread keepAlivePoller = new Thread(KeepAlivePolling);
 		keepAlivePoller.start();
-		while (true) {
-			if (!(keepAlivePoller.isAlive())) {
+		while(true) {
+			if(!(keepAlivePoller.isAlive())) {
 				keepAlivePoller.start();
 			}
-			if (!(commandListener.isAlive())) {
+			if(!(commandListener.isAlive())) {
 				commandListener.start();
 			}
 		}
 	}
 	
 	private String getLocalIP() throws SocketException {
-		if (!Main.isRelease()) {
+		if(!Main.isRelease()) {
 			String command;
-			if (System.getProperty("os.name").equals("Linux"))
+			if(System.getProperty("os.name").equals("Linux"))
 				if(!Main.isRelease()) {
 					command = "ip a";
 				} else {
@@ -135,13 +139,13 @@ public class Connection implements Runnable {
 			Process p = null;
 			try {
 				p = r.exec(command);
-			} catch (IOException e) {
-				e.printStackTrace();
+			} catch(IOException e) {
+				System.out.println("Couldn't get local IP");
 			}
 			Scanner s = new Scanner(p.getInputStream());
 			
 			StringBuilder sb = new StringBuilder("");
-			while (s.hasNext())
+			while(s.hasNext())
 				sb.append(s.next());
 			String ipconfig = sb.toString();
 			Pattern pt = Pattern.compile("172\\.168\\.[0-9]{1,3}\\.[0-9]{1,3}");
@@ -150,18 +154,18 @@ public class Connection implements Runnable {
 			
 			try {
 				return mt.group();
-			} catch (IllegalStateException e) {
+			} catch(IllegalStateException e) {
 				r = Runtime.getRuntime();
 				p = null;
 				try {
 					p = r.exec(command);
-				} catch (IOException ex) {
-					e.printStackTrace();
+				} catch(IOException ex) {
+					System.out.println("Reverting to class A network");
 				}
 				s = new Scanner(p.getInputStream());
 				
 				sb = new StringBuilder("");
-				while (s.hasNext())
+				while(s.hasNext())
 					sb.append(s.next());
 				ipconfig = sb.toString();
 				pt = Pattern.compile("10\\.0\\.[0-9]{1,3}\\.[0-9]{1,3}");
@@ -170,18 +174,18 @@ public class Connection implements Runnable {
 				
 				try {
 					return mt.group();
-				} catch (IllegalStateException ex) {
+				} catch(IllegalStateException ex) {
 					r = Runtime.getRuntime();
 					p = null;
 					try {
 						p = r.exec(command);
-					} catch (IOException exe) {
-						e.printStackTrace();
+					} catch(IOException exe) {
+						System.out.println("Reverting to class C network");
 					}
 					s = new Scanner(p.getInputStream());
 					
 					sb = new StringBuilder("");
-					while (s.hasNext())
+					while(s.hasNext())
 						sb.append(s.next());
 					ipconfig = sb.toString();
 					pt = Pattern.compile("192\\.168\\.[0-9]{1,3}\\.[0-9]{1,3}");
@@ -190,7 +194,7 @@ public class Connection implements Runnable {
 					
 					try {
 						return mt.group();
-					} catch (IllegalStateException exe) {
+					} catch(IllegalStateException exe) {
 						return null;
 					}
 				}
@@ -198,16 +202,16 @@ public class Connection implements Runnable {
 			
 		} else {
 			Enumeration e = NetworkInterface.getNetworkInterfaces();
-			while (e.hasMoreElements()) {
+			while(e.hasMoreElements()) {
 				NetworkInterface n = (NetworkInterface) e.nextElement();
 				
-				if (n.getDisplayName().equals("wlan0")) {
+				if(n.getDisplayName().equals("wlan0")) {
 					
 					Enumeration ee = n.getInetAddresses();
 					
-					while (ee.hasMoreElements()) {
+					while(ee.hasMoreElements()) {
 						InetAddress a = (InetAddress) ee.nextElement();
-						if (!a.getHostAddress().substring(0, 3).equals("127") && a.getHostAddress().contains(".")) {
+						if(!a.getHostAddress().substring(0, 3).equals("127") && a.getHostAddress().contains(".")) {
 							return a.getHostAddress();
 						}
 					}
@@ -228,14 +232,14 @@ public class Connection implements Runnable {
 			
 			System.out.println("Local IP: " + localIP);
 			
-			while (true) {
+			while(true) {
 				System.out.println("Listening to port " + receivePort);
 				receiveSocket.receive(receivedPacket);
 				
 				String receivedMessage = new String(receivedPacket.getData(), 0, receivedPacket.getLength());
 				
 				String identifier = "makrotouch ";
-				if (receivedMessage.contains(identifier)) {
+				if(receivedMessage.contains(identifier)) {
 					address =
 							receivedMessage.substring(receivedMessage.indexOf(identifier) + identifier.length());
 					connected = true;
@@ -247,8 +251,8 @@ public class Connection implements Runnable {
 				Thread.sleep(250);
 			}
 			
-		} catch (IOException | InterruptedException e) {
-			e.printStackTrace();
+		} catch(IOException | InterruptedException e) {
+			System.out.println("Couldn't listen for Makrotouch control application");
 			address = "";
 			connected = false;
 		}

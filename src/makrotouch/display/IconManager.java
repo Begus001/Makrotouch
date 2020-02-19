@@ -1,6 +1,7 @@
 package makrotouch.display;
 
 import makrotouch.main.FileManager;
+import makrotouch.main.Main;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -16,11 +17,14 @@ import java.util.regex.Pattern;
 
 public class IconManager {
 	private final String configPath = "res/config/makrotouch.xml";
+	
 	private int numPages;
-	private ArrayList<Icon> icons = new ArrayList<>();
-	private ArrayList<int[]> iconPos = new ArrayList<>();
 	private int iconPageSize = 8;
 	private int page = 0;
+	private boolean connected = false;
+	
+	private ArrayList<Icon> icons = new ArrayList<>();
+	private ArrayList<int[]> iconPos = new ArrayList<>();
 	private Graphics2D g;
 	private Rectangle2D windowBounds;
 	private JFrame window;
@@ -28,6 +32,10 @@ public class IconManager {
 	public IconManager(JFrame window) {
 		this.window = window;
 		windowBounds = this.window.getContentPane().getBounds();
+	}
+	
+	public void setConnected(boolean connected) {
+		this.connected = connected;
 	}
 	
 	public String getConfigPath() {
@@ -67,6 +75,8 @@ public class IconManager {
 	}
 	
 	public void initIcons(int columns, int rows, int margin) throws NullPointerException {
+		long start = System.nanoTime();
+		
 		double iconWidth, iconHeight;
 		iconPos.clear();
 		icons.clear();
@@ -82,6 +92,8 @@ public class IconManager {
 		iconHeight = windowBounds.getHeight() / rows - (margin + (double) margin / rows);
 		
 		posInit(columns, rows, margin, iconWidth, iconHeight);
+		
+		Main.reportDrawDuration(System.nanoTime() - start);
 	}
 	
 	private void sortIcons() {
@@ -126,16 +138,15 @@ public class IconManager {
 		int x, y;
 		
 		//Initialize Positions
-		for(int outOfBounds = 0; outOfBounds <= 1; outOfBounds++)
 			for(int i = 0; i < rows; i++)
 				for(int k = 0; k < columns; k++) {
-					x = (int) (margin + k * (margin + width) + outOfBounds * windowBounds.getWidth());
+					x = (int) (margin + k * (margin + width));
 					y = (int) (margin + i * (margin + height));
 					iconPos.add(new int[]{x, y});
 				}
 		
 		//Set Icon Positions
-		for(int i = 0; i < iconPageSize * 2; i++) {
+		for(int i = 0; i < iconPageSize; i++) {
 			if(i < icons.size()) {
 				icons.get(i).setWidth((int) width);
 				icons.get(i).setHeight((int) height);
@@ -152,17 +163,16 @@ public class IconManager {
 		int x, y;
 		
 		//Initialize Positions
-		for(int outOfBounds = -1; outOfBounds <= 0; outOfBounds++)
 			for(int i = 0; i < rows; i++)
 				for(int k = 0; k < columns; k++) {
-					x = (int) (margin + k * (margin + width) + outOfBounds * windowBounds.getWidth());
+					x = (int) (margin + k * (margin + width));
 					y = (int) (margin + i * (margin + height));
 					iconPos.add(new int[]{x, y});
 				}
 		
 		//Set Icon Positions
 		int posCount = 0;
-		for(int i = (numPages - 2) * iconPageSize; i < icons.size(); i++) {
+		for(int i = (numPages - 1) * iconPageSize; i < icons.size(); i++) {
 			icons.get(i).setWidth((int) width);
 			icons.get(i).setHeight((int) height);
 			
@@ -178,17 +188,16 @@ public class IconManager {
 		int x, y;
 		
 		//Initialize Positions
-		for(int outOfBounds = -1; outOfBounds <= 1; outOfBounds++)
 			for(int i = 0; i < rows; i++)
 				for(int k = 0; k < columns; k++) {
-					x = (int) ((margin + k * (margin + width)) + (outOfBounds * windowBounds.getWidth()));
+					x = (int) ((margin + k * (margin + width)));
 					y = (int) (margin + i * (margin + height));
 					iconPos.add(new int[]{x, y});
 				}
 		
 		//Set Icon Positions
 		int posCount = 0;
-		for(int i = (page - 1) * iconPageSize; i < (page - 1) * iconPageSize + iconPos.size(); i++) {
+		for(int i = page * iconPageSize; i < page * iconPageSize * 2; i++) {
 			if(i < icons.size()) {
 				icons.get(i).setWidth((int) width);
 				icons.get(i).setHeight((int) height);
@@ -203,6 +212,8 @@ public class IconManager {
 	}
 	
 	public void drawIcons() {
+		long start = System.nanoTime();
+		
 		if(g == null)
 			return;
 		g.setColor(Color.white);
@@ -249,7 +260,7 @@ public class IconManager {
 					
 					
 				} catch(NullPointerException e) {
-					e.printStackTrace();
+					System.out.println("Couldn't draw icon");
 					return;
 				}
 				//}
@@ -257,19 +268,40 @@ public class IconManager {
 			
 			g.setFont(new Font("Tahoma", Font.PLAIN, 25));
 			g.drawString((page + 1) + "/" + numPages, 10, 27); //Draw Page Number
+			
+			//Draw WiFi icon
+			if(connected) {
+				g.setColor(Color.GREEN);
+			} else {
+				g.setColor(Color.WHITE);
+			}
+			g.setStroke(new BasicStroke(5));
+			g.drawLine(977, 15, 1009, 15);
+			g.drawLine(977, 28, 1009, 28);
+			g.drawLine(977, 41, 1009, 41);
+			
+			g.setColor(Color.WHITE);
+			
+			//Draw page switchers
+			g.fillPolygon(new int[]{1010, 970, 970, 1010}, new int[]{300, 400, 200, 300}, 4);
+			g.fillPolygon(new int[]{14, 54, 54, 14}, new int[]{300, 400, 200, 300}, 4);
+			
+			Main.reportDrawDuration(System.nanoTime() - start);
 		}
 		
 		//Draw Icon Positions
 		/*
 		for (int[] i : iconPos) {
 			try {
-				g.drawOval(i[0] + (int) (mouseX - 512) * 2, i[1], 50, 50);
+				g.drawOval(i[0], i[1], 50, 50);
 			} catch (NullPointerException e) {
 				return;
 			}
 		}
 		
 		 */
+		
+		
 	}
 	
 	private String getLocalIP() {
@@ -283,7 +315,7 @@ public class IconManager {
 		try {
 			p = r.exec(command);
 		} catch(IOException e) {
-			e.printStackTrace();
+			System.out.println("Couldn't get local IP");
 		}
 		Scanner s = new Scanner(p.getInputStream());
 		

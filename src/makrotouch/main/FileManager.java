@@ -59,7 +59,7 @@ public class FileManager {
 				}
 			}
 		} catch (NumberFormatException | SAXException | IOException | ParserConfigurationException e) {
-			e.printStackTrace();
+			System.out.println("Couldn't load icons");
 		}
 		
 		return tmp;

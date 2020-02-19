@@ -30,9 +30,9 @@ public class SettingsActions implements ActionListener {
 			
 			try {
 				if(Main.isRelease()) {
-					Runtime.getRuntime().exec("nmcli dev disconnect iface wlan0");
+					Runtime.getRuntime().exec("nmcli dev disconnect wlan0");
 				} else {
-					Runtime.getRuntime().exec("nmcli dev disconnect iface wlp3s0");
+					Runtime.getRuntime().exec("nmcli dev disconnect wlp3s0");
 				}
 				Thread.sleep(1000);
 				
@@ -62,8 +62,10 @@ public class SettingsActions implements ActionListener {
 				if(connected) {
 					showMessageDialog(settings.getWindow(), "Connected!");
 					settings.getWindow().dispose();
+					Main.getIcnmgr().setConnected(true);
 				} else {
-					showMessageDialog(settings.getWindow(), "Could not connect to wifi network!");
+					Main.getIcnmgr().setConnected(false);
+					showMessageDialog(settings.getWindow(), "Could not connect to WiFi network!");
 				}
 				
 			} catch(IOException | InterruptedException e) {

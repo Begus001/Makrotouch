@@ -6,25 +6,30 @@ import makrotouch.settings.SettingsManager;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main implements Runnable {
 	
 	//MUST BE TRUE WHEN BUILDING FOR RELEASE
-	private static boolean release = true;
+	private static final boolean release = true;
 	////////////////////////////////////////
+	
+	private static final double FPS = 60.0;
 	
 	private static int programState = 0;
 	private static IconManager icnmgr;
 	private static Connection connection;
 	private static SettingsManager settings;
-	private Graphics2D g;
-	private BufferStrategy bs;
-	private Thread thread;
-	private Window window;
-	private Dimension screenBounds = Toolkit.getDefaultToolkit().getScreenSize();
-	private boolean running = false;
-	private int actualFrames = -1;
+	private static Graphics2D g;
+	private static BufferStrategy bs;
+	private static Thread thread;
+	private static Window window;
+	private static Dimension screenBounds = Toolkit.getDefaultToolkit().getScreenSize();
+	private static boolean running = false;
+	private static int actualFrames = -1;
+	private static long reportedDrawDuration = 0;
 	
 	public Main() {
 		if(!release) {
@@ -71,6 +76,10 @@ public class Main implements Runnable {
 		return settings;
 	}
 	
+	public static void reportDrawDuration(long reportedDrawDuration) {
+		Main.reportedDrawDuration = reportedDrawDuration;
+	}
+	
 	public void run() {
 		init();
 		int frames = 0;
@@ -81,7 +90,7 @@ public class Main implements Runnable {
 		while(running) {
 			long now = System.nanoTime();
 			
-			if(now - lastTime > 9500000) {
+			if(now - lastTime > (1 / FPS) * 600000000 - reportedDrawDuration) {
 				render();
 				tick();
 				frames++;
@@ -93,11 +102,6 @@ public class Main implements Runnable {
 				actualFrames = frames;
 				frames = 0;
 			}
-			try {
-				Thread.sleep(5);
-			} catch(InterruptedException e) {
-				e.printStackTrace();
-			}
 		}
 	}
 	
@@ -106,9 +110,21 @@ public class Main implements Runnable {
 		try {
 			connection = new Connection(42069, 42070);
 		} catch(IOException e) {
-			e.printStackTrace();
+			System.out.println("Couldn't connect to Makrotouch control application");
 		}
-		System.setProperty("sun.java2d.opengl", "true");
+		System.setProperty("sun.java2d.opengl", "false");
+		
+		try {
+			Process checkConnected = Runtime.getRuntime().exec("nmcli con show --active");
+			BufferedReader reader = new BufferedReader(new InputStreamReader(checkConnected.getInputStream()));
+			if(reader.readLine().contains("NAME")) {
+				icnmgr.setConnected(true);
+			} else {
+				icnmgr.setConnected(false);
+			}
+		} catch(IOException e) {
+			System.out.println("Couldn't get connection status");
+		}
 	}
 	
 	private void render() {
@@ -118,15 +134,11 @@ public class Main implements Runnable {
 		
 		switch(programState) {
 			case 0:
-				try {
-					icnmgr.clear();
-					//icnmgr.initIcons(4, 2, 75);
-					icnmgr.drawIcons();
-					if(actualFrames != -1)
-						icnmgr.printString(Integer.toString(actualFrames), 20, 540, 20);
-				} catch(NullPointerException e) {
-					e.printStackTrace();
-				}
+				icnmgr.clear();
+				//icnmgr.initIcons(4, 2, 75);
+				icnmgr.drawIcons();
+				//if(actualFrames != -1)
+					//icnmgr.printString(Integer.toString(actualFrames), 20, 540, 20);
 				break;
 			
 			case 1:
@@ -144,7 +156,7 @@ public class Main implements Runnable {
 							settings.getWindow().requestFocus();
 						}
 					} catch(InterruptedException e) {
-						e.printStackTrace();
+						System.out.println("Thread sleep interrupted");
 					}
 				}
 				System.out.println("Resuming normal operation");
