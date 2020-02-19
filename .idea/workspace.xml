@@ -2,100 +2,38 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Makrotouch" />
+      <artifact name="Makrotouch:jar" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c0c1c9b-c4d8-4b57-989f-5906e2053d92" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Makrotouch (1).zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/config/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/icons/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/makrotouch/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/makrotouch/display/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/makrotouch/events/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/makrotouch/main/desktop.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts (1)/Makrotouch.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Makrotouch.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Makrotouch.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Makrotouch_build018.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/makrotouch/settings/OnScreenKeyboardLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Makrotouch.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Makrotouch_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makrotouch.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makrotouch_build009.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Makrotouch_build009.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makrotouch_build010.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Makrotouch_build010.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makrotouch_build011.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Makrotouch_build011.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makrotouch_build012.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Makrotouch_build012.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makrotouch_build013.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Makrotouch_build013.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makrotouch_buildTdoT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Makrotouch_buildTdoT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/config/makrotouch.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/config/makrotouch.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/002-music.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/003-stop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/004-settings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/005-loop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/006-loop-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/007-controller.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/008-maximize.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/009-headphone.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/010-unlock.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/011-back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/012-upload.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/013-play.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/014-like.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/016-share.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/017-bars-graphics.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/018-minimize.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/019-reduce-volume.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/020-menu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/021-pause.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/022-power-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/023-recording.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/024-low-volume.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/025-shuffle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/026-recording-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/027-information.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/028-folder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/030-mute.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/031-skip.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/032-forwards.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/034-volume-adjustment.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/035-volume-up.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/036-rate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/037-question-mark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/038-padlock.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/039-skip-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/040-backward.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/1073764-multimedia-player-control.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/ae.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/download.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/next.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/notepad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/play.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/prev.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/refresh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/spotify.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/icons/word.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/display/Icon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/display/Icon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/display/IconManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/display/IconManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/display/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/display/Window.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/On-Screen-Keyboard" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/events/TouchListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/events/TouchListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/main/Connection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/main/FileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/main/FileManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/config/makrotouch.xml" beforeDir="false" afterPath="$PROJECT_DIR$/res/config/makrotouch.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/icons/play.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/icons/play.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/icons/word.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/icons/word.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/makrotouch/display/Icon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/makrotouch/display/Icon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/makrotouch/display/IconManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/makrotouch/display/IconManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/settings/SettingsActions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/settings/SettingsActions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/settings/SettingsManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/settings/SettingsManager$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/settings/SettingsManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Makrotouch/makrotouch/settings/SettingsManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/makrotouch/display/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/makrotouch/display/Window.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/makrotouch/events/TouchListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/makrotouch/events/TouchListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/makrotouch/main/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/makrotouch/main/Connection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/makrotouch/main/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/makrotouch/main/FileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/makrotouch/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/makrotouch/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/makrotouch/settings/SettingsActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/makrotouch/settings/SettingsActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/makrotouch/settings/SettingsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/makrotouch/settings/SettingsManager.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Makrotouch" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -112,6 +50,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -121,13 +60,18 @@
     </option>
   </component>
   <component name="ProjectId" id="1SLaFDuqCvf30tjh5jE90aK9BPV" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20530452" />
@@ -139,18 +83,6 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\admin\Google Drive\Projects\Java\Makrotouch" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -171,6 +103,21 @@
         <item itemvalue="Application.Launcher" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -209,5 +156,75 @@
     <MESSAGE value="Implemented XML Parsing&#10;&#10;Icons can now be added or removed by editing the &quot;makrotouch.xml&quot; file.&#10;The icon images and names are also displayed.&#10;v0.0.2" />
     <option name="LAST_COMMIT_MESSAGE" value="Implemented XML Parsing&#10;&#10;Icons can now be added or removed by editing the &quot;makrotouch.xml&quot; file.&#10;The icon images and names are also displayed.&#10;v0.0.2" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="395" y="90" width="800" height="674" key="#Java" timestamp="1581682923358">
+      <screen x="0" y="0" width="1600" height="858" />
+    </state>
+    <state x="395" y="90" width="800" height="674" key="#Java/0.0.1600.858@0.0.1600.858" timestamp="1581682923358" />
+    <state x="400" y="92" key="#Project_Structure" timestamp="1579271902985">
+      <screen x="0" y="0" width="1600" height="858" />
+    </state>
+    <state x="400" y="92" key="#Project_Structure/0.0.1600.858@0.0.1600.858" timestamp="1579271902985" />
+    <state x="608" y="141" width="374" height="572" key="#com.intellij.ide.util.MemberChooser" timestamp="1581684322742">
+      <screen x="0" y="0" width="1600" height="858" />
+    </state>
+    <state x="608" y="141" width="374" height="572" key="#com.intellij.ide.util.MemberChooser/0.0.1600.858@0.0.1600.858" timestamp="1581684322742" />
+    <state x="538" y="216" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1581683032245">
+      <screen x="0" y="0" width="1600" height="858" />
+    </state>
+    <state x="538" y="216" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.858@0.0.1600.858" timestamp="1581683032245" />
+    <state x="583" y="187" width="424" height="481" key="FileChooserDialogImpl" timestamp="1580459727636">
+      <screen x="0" y="0" width="1600" height="858" />
+    </state>
+    <state x="583" y="187" width="424" height="481" key="FileChooserDialogImpl/0.0.1600.858@0.0.1600.858" timestamp="1580459727636" />
+    <state width="2151" height="207" key="GridCell.Tab.0.bottom" timestamp="1582121616957">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state width="1554" height="182" key="GridCell.Tab.0.bottom/0.0.1600.858@0.0.1600.858" timestamp="1581690791600" />
+    <state width="2151" height="207" key="GridCell.Tab.0.bottom/0.0.2194.1194/3840.661.1920.1040/-1280.507.1280.984@0.0.2194.1194" timestamp="1582121616957" />
+    <state width="2151" height="207" key="GridCell.Tab.0.center" timestamp="1582121616957">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state width="1554" height="182" key="GridCell.Tab.0.center/0.0.1600.858@0.0.1600.858" timestamp="1581690791599" />
+    <state width="2151" height="207" key="GridCell.Tab.0.center/0.0.2194.1194/3840.661.1920.1040/-1280.507.1280.984@0.0.2194.1194" timestamp="1582121616957" />
+    <state width="2151" height="207" key="GridCell.Tab.0.left" timestamp="1582121616957">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state width="1554" height="182" key="GridCell.Tab.0.left/0.0.1600.858@0.0.1600.858" timestamp="1581690791599" />
+    <state width="2151" height="207" key="GridCell.Tab.0.left/0.0.2194.1194/3840.661.1920.1040/-1280.507.1280.984@0.0.2194.1194" timestamp="1582121616957" />
+    <state width="2151" height="207" key="GridCell.Tab.0.right" timestamp="1582121616957">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state width="1554" height="182" key="GridCell.Tab.0.right/0.0.1600.858@0.0.1600.858" timestamp="1581690791600" />
+    <state width="2151" height="207" key="GridCell.Tab.0.right/0.0.2194.1194/3840.661.1920.1040/-1280.507.1280.984@0.0.2194.1194" timestamp="1582121616957" />
+    <state width="1554" height="266" key="GridCell.Tab.1.bottom" timestamp="1581670937675">
+      <screen x="0" y="0" width="1600" height="858" />
+    </state>
+    <state width="1554" height="266" key="GridCell.Tab.1.bottom/0.0.1600.858@0.0.1600.858" timestamp="1581670937675" />
+    <state width="1554" height="266" key="GridCell.Tab.1.center" timestamp="1581670937675">
+      <screen x="0" y="0" width="1600" height="858" />
+    </state>
+    <state width="1554" height="266" key="GridCell.Tab.1.center/0.0.1600.858@0.0.1600.858" timestamp="1581670937675" />
+    <state width="1554" height="266" key="GridCell.Tab.1.left" timestamp="1581670937675">
+      <screen x="0" y="0" width="1600" height="858" />
+    </state>
+    <state width="1554" height="266" key="GridCell.Tab.1.left/0.0.1600.858@0.0.1600.858" timestamp="1581670937675" />
+    <state width="1554" height="266" key="GridCell.Tab.1.right" timestamp="1581670937675">
+      <screen x="0" y="0" width="1600" height="858" />
+    </state>
+    <state width="1554" height="266" key="GridCell.Tab.1.right/0.0.1600.858@0.0.1600.858" timestamp="1581670937675" />
+    <state x="0" y="0" width="1600" height="858" key="SettingsEditor" timestamp="1581683080222">
+      <screen x="0" y="0" width="1600" height="858" />
+    </state>
+    <state x="0" y="0" width="1600" height="858" key="SettingsEditor/0.0.1600.858@0.0.1600.858" timestamp="1581683080222" />
+    <state x="906" y="513" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581818100471">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="906" y="513" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2194.1194/3840.661.1920.1040/-1280.507.1280.984@0.0.2194.1194" timestamp="1581818100471" />
+    <state x="463" y="179" width="672" height="678" key="search.everywhere.popup" timestamp="1579852554281">
+      <screen x="0" y="0" width="1600" height="858" />
+    </state>
+    <state x="463" y="179" width="672" height="678" key="search.everywhere.popup/0.0.1600.858@0.0.1600.858" timestamp="1579852554281" />
   </component>
 </project>

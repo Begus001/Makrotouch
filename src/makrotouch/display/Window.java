@@ -5,6 +5,8 @@ import makrotouch.main.Main;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
@@ -49,7 +51,7 @@ public class Window extends JFrame {
         } else {
         	this.getContentPane().setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
             setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		}
+        }
 
         pack();
 

@@ -20,22 +20,21 @@ public class SettingsManager {
 
     private JFrame window;
     private ActionListener listener = new SettingsActions();
+    private OnScreenKeyboardLauncher focusListener = new OnScreenKeyboardLauncher();
     private Dimension screenBounds = Toolkit.getDefaultToolkit().getScreenSize();
 
     private JButton btConnect, btCancel, btUp, btDown;
     private JList liWifi;
     private JLabel lbLoading;
-    private JTextField tfPassword;
+    private JPasswordField tfPassword;
 
     private ArrayList<String> wifiNetworks;
     private String[] wifiNetworksFinal;
-
-    private int ESSIDPos, infraPos;
     private boolean open = true;
 
     public SettingsManager() {
         if (Main.isRelease()) {
-            window = new Window("Settings", (int) screenBounds.getWidth(), (int) screenBounds.getHeight(), false, true, true);
+            window = new Window("Settings", (int) screenBounds.getWidth(), (int) screenBounds.getHeight(), false, false, true);
         } else {
             window = new Window("Settings", 1024, 600, false, true, true);
         }
@@ -66,6 +65,10 @@ public class SettingsManager {
         return open;
     }
 
+    public void setOpen(boolean open) {
+        this.open = open;
+    }
+
     private void initLoading() {
         lbLoading.setPreferredSize(new Dimension((int) screenBounds.getWidth(), 40));
         lbLoading.setMaximumSize(new Dimension((int) screenBounds.getWidth(), 40));
@@ -84,30 +87,19 @@ public class SettingsManager {
         new Thread(() -> {
             try {
                 System.out.print("Fetching WiFi networks...");
-                Process wifiCommand = Runtime.getRuntime().exec("nmcli dev wifi", null);
+                Process wifiCommand = Runtime.getRuntime().exec("nmcli -f ssid dev wifi", null);
 
                 BufferedReader commandOutputReader = new BufferedReader(new InputStreamReader(wifiCommand.getInputStream()));
-                StringBuilder output = new StringBuilder();
                 String currentLine;
                 int i = 0;
                 while ((currentLine = commandOutputReader.readLine()) != null) {
 
-                    if (i == 0) {
-                        ESSIDPos = currentLine.indexOf("SSID");
-                        infraPos = currentLine.indexOf("MODE");
-                    } else {
-                        if (!wifiNetworks.contains(currentLine.substring(ESSIDPos, infraPos).trim())) {
-                            wifiNetworks.add(currentLine.substring(ESSIDPos, infraPos).trim());
-                        }
-                    }
-
-                    output.append(currentLine + "\n");
+                    if (i != 0 && !wifiNetworks.contains(currentLine))
+                        wifiNetworks.add(currentLine);
                     i++;
                 }
 
                 System.out.println("done");
-
-                System.out.println(output);
 
                 wifiNetworks.forEach(System.out::println);
 
@@ -116,7 +108,8 @@ public class SettingsManager {
                 initElem();
 
             } catch (IOException e) {
-
+                javax.swing.JOptionPane.showMessageDialog(this.getWindow(), "Couldn't fetch wifi networks!");
+                window.dispose();
             }
         }).start();
 
@@ -180,11 +173,12 @@ public class SettingsManager {
         window.pack();
         btDown.setVisible(true);
 
-        tfPassword = new JTextField();
+        tfPassword = new JPasswordField();
         tfPassword.setPreferredSize(new Dimension(600, 20));
         tfPassword.setMaximumSize(new Dimension(600, 20));
         tfPassword.setMinimumSize(new Dimension(600, 20));
         tfPassword.setAlignmentX(Component.CENTER_ALIGNMENT);
+        tfPassword.addFocusListener(focusListener);
         window.getContentPane().add(tfPassword);
         window.pack();
         tfPassword.setVisible(true);
