@@ -54,12 +54,11 @@ public class SettingsManager {
 		window.addComponentListener(new ComponentListener() {
 			@Override
 			public void componentResized(ComponentEvent componentEvent) {
-				window.setMinimumSize(new Dimension(1024, 600));
+				window.setState(window.MAXIMIZED_BOTH);
 			}
 			
 			@Override
 			public void componentMoved(ComponentEvent componentEvent) {
-				window.setExtendedState(window.getExtendedState()|JFrame.MAXIMIZED_BOTH);
 				window.setLocationRelativeTo(null);
 			}
 			
@@ -74,10 +73,11 @@ public class SettingsManager {
 			}
 		});
 		
-		window.addWindowStateListener(new WindowAdapter() {
+		window.addWindowListener(new WindowAdapter() {
 			@Override
-			public void windowStateChanged(WindowEvent windowEvent) {
-				window.setExtendedState(window.getExtendedState()|JFrame.MAXIMIZED_BOTH);
+			public void windowIconified(WindowEvent e) {
+				window.setState(window.NORMAL);
+				window.setState(window.MAXIMIZED_BOTH);
 				window.setLocationRelativeTo(null);
 			}
 		});
