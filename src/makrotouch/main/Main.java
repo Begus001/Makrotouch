@@ -92,7 +92,6 @@ public class Main implements Runnable {
 
 			if (now - lastTime > (1 / FPS) * 600000000 - reportedDrawDuration) {
 				render();
-				System.out.println(Main.getConnection().isConnected() ? "Connected" : "Disconnected");
 				tick();
 				frames++;
 				lastTime = System.nanoTime();

@@ -39,8 +39,6 @@ public class Connection implements Runnable {
 
 					System.out.println("Refreshing Icons");
 
-					System.out.println(Main.getIcnmgr().getPage() + " > " + (Main.getIcnmgr().getNumPages() - 1));
-
 					if (Main.getIcnmgr().getPage() > Main.getIcnmgr().getNumPages() - 1) {
 						System.out.println("Page too large");
 						Main.getIcnmgr().setPage(Main.getIcnmgr().getNumPages() - 1);
@@ -145,7 +143,7 @@ public class Connection implements Runnable {
 
 		Thread keepAlivePoller = new Thread(KeepAlivePolling);
 		keepAlivePoller.start();
-		while (true) {
+		while (connected) {
 			if (!(keepAlivePoller.isAlive())) {
 				resetConnection();
 			}
@@ -292,8 +290,19 @@ public class Connection implements Runnable {
 	}
 
 	private void resetConnection() {
+		connected = false;
 		if (sendSocket != null) sendSocket.close();
 		if (receiveSocket != null) receiveSocket.close();
 		if (keepAliveSocket != null) keepAliveSocket.close();
+
+		System.out.println("Connection reset");
+
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		run();
 	}
 }
