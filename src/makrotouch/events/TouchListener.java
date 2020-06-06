@@ -8,7 +8,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
-public class TouchListener implements MouseListener, MouseMotionListener {
+public class TouchListener implements MouseListener {
 
 	//private static boolean released = true;
 	//private static ScheduledExecutorService releaseTimer;
@@ -55,7 +55,6 @@ public class TouchListener implements MouseListener, MouseMotionListener {
 			} else {
 				Main.getIcnmgr().setPage(Main.getIcnmgr().getNumPages() - 1);
 			}
-			Main.setProgramState(1);
 
 		} else if (e.getX() >= 970 && e.getY() >= 50 && e.getY() <= 530) {
 
@@ -64,7 +63,6 @@ public class TouchListener implements MouseListener, MouseMotionListener {
 			} else {
 				Main.getIcnmgr().setPage(0);
 			}
-			Main.setProgramState(1);
 
 		} else if (e.getX() >= 945 && e.getY() <= 70) {
 			Main.setProgramState(2);
@@ -128,6 +126,8 @@ public class TouchListener implements MouseListener, MouseMotionListener {
 
 	private void iconPressAnimation(Icon i) {
 		Thread anim = new Thread(() -> {
+			Main.getIcnmgr().setAnimate(true);
+
 			for (int k = 0; k <= 9; k++) {
 				i.setWidth(i.getWidth() - k);
 				i.setHeight(i.getHeight() - k);
@@ -151,6 +151,8 @@ public class TouchListener implements MouseListener, MouseMotionListener {
 					e.printStackTrace();
 				}
 			}
+
+			Main.getIcnmgr().setAnimate(false);
 		});
 		anim.start();
 	}
@@ -163,14 +165,5 @@ public class TouchListener implements MouseListener, MouseMotionListener {
 	@Override
 	public void mouseExited(MouseEvent e) {
 
-	}
-
-	@Override
-	public void mouseDragged(MouseEvent e) {
-
-	}
-
-	@Override
-	public void mouseMoved(MouseEvent e) {
 	}
 }

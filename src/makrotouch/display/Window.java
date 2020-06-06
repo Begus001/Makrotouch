@@ -17,7 +17,6 @@ public class Window extends JFrame {
     private Dimension size;
     private Dimension screenBounds = Toolkit.getDefaultToolkit().getScreenSize();
     private Canvas canvas;
-    private BufferStrategy bs;
 
     private String title;
 
@@ -78,9 +77,5 @@ public class Window extends JFrame {
 
     public Canvas getCanvas() {
         return this.canvas;
-    }
-
-    public BufferStrategy getBS() {
-        return bs;
     }
 }

@@ -11,9 +11,9 @@ import java.util.regex.Pattern;
 
 public class Connection implements Runnable {
 
-	private int timeout = 2000;
+	private final int timeout = 2000;
 
-	private DatagramSocket receiveSocket, sendSocket, keepAliveSocket, keepAliveSocketReceiver;
+	private DatagramSocket receiveSocket, sendSocket, keepAliveSocket;
 
 	private int receivePort, sendPort;
 	private String address;
@@ -35,19 +35,12 @@ public class Connection implements Runnable {
 
 				if (receivedMessage.equals(("refresh"))) {
 
-					Main.getIcnmgr().initIcons();
-
 					System.out.println("Refreshing Icons");
 
-					if (Main.getIcnmgr().getPage() > Main.getIcnmgr().getNumPages() - 1) {
-						System.out.println("Page too large");
-						Main.getIcnmgr().setPage(Main.getIcnmgr().getNumPages() - 1);
-						Main.getIcnmgr().drawIcons();
-					} else if (Main.getIcnmgr().getPage() == -1) {
-						System.out.println("No icons");
-						Main.getIcnmgr().setPage(0);
-					}
 					Main.setProgramState(1);
+
+					Main.getIcnmgr().setPage(0);
+
 				} else if (receivedMessage.equals("makrotouch pong")) {
 					lastPong = System.currentTimeMillis();
 				}
@@ -58,7 +51,7 @@ public class Connection implements Runnable {
 					TouchListener.setReleased(true);
 					System.out.println("Icons released");
 				}
-				
+
 				 */
 
 				Thread.sleep(250);
@@ -95,7 +88,7 @@ public class Connection implements Runnable {
 		}
 	};
 
-	public Connection(int receivePort, int sendPort) throws SocketException {
+	public Connection(int receivePort, int sendPort) {
 		this.receivePort = receivePort;
 		this.sendPort = sendPort;
 		Thread connectionConfigurator = new Thread(this);
@@ -135,7 +128,7 @@ public class Connection implements Runnable {
 		} while (localIP == null);
 
 		do {
-			ListenForIP();
+			listenForIP();
 		} while (!connected);
 
 		Thread commandListener = new Thread(CommandListening);
@@ -250,7 +243,7 @@ public class Connection implements Runnable {
 		return null;
 	}
 
-	private void ListenForIP() {
+	private void listenForIP() {
 		try {
 
 			receiveSocket = new DatagramSocket(receivePort);

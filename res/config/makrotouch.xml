@@ -1,201 +1,50 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <makrotouch>
   <icons>
-    <icon id="3">
-      <name>Word</name>
-      <image_name>word.png</image_name>
-      <makro>
-        <open_app>C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE</open_app>
-      </makro>
-    </icon>
-    <icon id="5">
-      <name>HTL</name>
-      <image_name>htl.png</image_name>
-      <makro>
-        <open_website>https://htl.moedling.at/home/</open_website>
-        <wait>1000</wait>
-        <open_website>https://htl.moedling.at/home/</open_website>
-        <wait>1000</wait>
-        <open_website>https://htl.moedling.at/home/</open_website>
-        <wait>1000</wait>
-        <open_website>https://htl.moedling.at/home/</open_website>
-        <wait>1000</wait>
-        <open_website>https://htl.moedling.at/home/</open_website>
-        <wait>1000</wait>
-        <open_website>https://htl.moedling.at/home/</open_website>
-        <wait>1000</wait>
-        <open_website>https://htl.moedling.at/home/</open_website>
-        <wait>1000</wait>
-        <open_website>https://htl.moedling.at/home/</open_website>
-        <wait>1000</wait>
-        <open_website>https://htl.moedling.at/home/</open_website>
-        <wait>1000</wait>
-        <open_website>https://htl.moedling.at/home/</open_website>
-        <wait>1000</wait>
-        <open_website>https://htl.moedling.at/home/</open_website>
-        <wait>1000</wait>
-        <open_website>https://htl.moedling.at/home/</open_website>
-        <wait>1000</wait>
-        <open_website>https://htl.moedling.at/home/</open_website>
-        <wait>1000</wait>
-        <open_website>https://htl.moedling.at/home/</open_website>
-        <wait>1000</wait>
-        <open_website>https://htl.moedling.at/home/</open_website>
-        <wait>1000</wait>
-        <open_website>https://htl.moedling.at/home/</open_website>
-        <wait>1000</wait>
-        <open_website>https://htl.moedling.at/home/</open_website>
-        <wait>1000</wait>
-        <open_website>https://htl.moedling.at/home/</open_website>
-        <wait>1000</wait>
-      </makro>
-    </icon>
-    <icon id="1">
-      <name>Play/Pause</name>
-      <image_name>play.png</image_name>
-      <makro>
-        <play_pause />
-      </makro>
-    </icon>
-    <icon id="2">
-      <name>Next</name>
-      <image_name>next.png</image_name>
-      <makro>
-        <media_next />
-      </makro>
-    </icon>
     <icon id="0">
       <name>Previous</name>
       <image_name>prev.png</image_name>
       <makro>
-        <media_prev />
+        <open_app>C:\Windows\System32\notepad.exe</open_app>
+        <wait>10000</wait>
+        <keyboard_input>Das ist ein Test.</keyboard_input>
       </makro>
+    </icon>
+    <icon id="1">
+      <name>Play</name>
+      <image_name>play.png</image_name>
+      <makro />
+    </icon>
+    <icon id="2">
+      <name>Next</name>
+      <image_name>next.png</image_name>
+      <makro />
+    </icon>
+    <icon id="3">
+      <name>YouTube</name>
+      <image_name>youtube.png</image_name>
+      <makro />
     </icon>
     <icon id="4">
-      <name>Demo</name>
+      <name>Notepad</name>
       <image_name>notepad.png</image_name>
-      <makro>
-        <open_app>C:\Windows\system32\notepad.exe</open_app>
-        <wait>1000</wait>
-        <keyboard_input>Lorem ipsum dolor sit amet, 
-        consectetur adipiscing elit, sed do 
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
-        ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-         deserunt mollit anim id est laborum.</keyboard_input>
-      </makro>
+      <makro />
+    </icon>
+    <icon id="5">
+      <name>Screenshot</name>
+      <image_name>screenshot.png</image_name>
+      <makro />
     </icon>
     <icon id="6">
-      <name>Icon 7</name>
-      <image_name />
-      <makro>
-        <screenshot onlyActiveWindow="True">C:\Users\Manuel\Desktop\</screenshot>
-        <shortcut>LControlKey+A</shortcut>
-      </makro>
+      <name>Spotify</name>
+      <image_name>spotify.png</image_name>
+      <makro />
     </icon>
     <icon id="7">
-      <name>PowerPoint</name>
-      <image_name>Image_0.png</image_name>
-      <makro>
-        <open_app>C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE</open_app>
-        <wait>1000</wait>
-        <open_dir>C:\Users\Manuel\Documents</open_dir>
-      </makro>
-    </icon>
-    <icon id="8">
-      <name>Icon</name>
-      <image_name />
+      <name>After Effects</name>
+      <image_name>ae.png</image_name>
       <makro />
-    </icon>
-    <icon id="9">
-      <name>Icon</name>
-      <image_name />
-      <makro />
-    </icon>
-	<icon id="10">
-      <name>PowerPoint</name>
-      <image_name>Image_0.png</image_name>
-      <makro>
-        <open_app>C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE</open_app>
-        <wait>1000</wait>
-        <open_dir>C:\Users\Manuel\Documents</open_dir>
-      </makro>
-    </icon>
-	<icon id="11">
-      <name>PowerPoint</name>
-      <image_name>Image_0.png</image_name>
-      <makro>
-        <open_app>C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE</open_app>
-        <wait>1000</wait>
-        <open_dir>C:\Users\Manuel\Documents</open_dir>
-      </makro>
-    </icon>
-	<icon id="12">
-      <name>PowerPoint</name>
-      <image_name>Image_0.png</image_name>
-      <makro>
-        <open_app>C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE</open_app>
-        <wait>1000</wait>
-        <open_dir>C:\Users\Manuel\Documents</open_dir>
-      </makro>
-    </icon>
-	<icon id="13">
-      <name>PowerPoint</name>
-      <image_name>Image_0.png</image_name>
-      <makro>
-        <open_app>C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE</open_app>
-        <wait>1000</wait>
-        <open_dir>C:\Users\Manuel\Documents</open_dir>
-      </makro>
-    </icon>
-	<icon id="14">
-      <name>PowerPoint</name>
-      <image_name>Image_0.png</image_name>
-      <makro>
-        <open_app>C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE</open_app>
-        <wait>1000</wait>
-        <open_dir>C:\Users\Manuel\Documents</open_dir>
-      </makro>
-    </icon>
-	<icon id="15">
-      <name>PowerPoint</name>
-      <image_name>Image_0.png</image_name>
-      <makro>
-        <open_app>C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE</open_app>
-        <wait>1000</wait>
-        <open_dir>C:\Users\Manuel\Documents</open_dir>
-      </makro>
-    </icon>
-	<icon id="16">
-      <name>PowerPoint</name>
-      <image_name>Image_0.png</image_name>
-      <makro>
-        <open_app>C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE</open_app>
-        <wait>1000</wait>
-        <open_dir>C:\Users\Manuel\Documents</open_dir>
-      </makro>
-    </icon>
-	<icon id="17">
-      <name>PowerPoint</name>
-      <image_name>Image_0.png</image_name>
-      <makro>
-        <open_app>C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE</open_app>
-        <wait>1000</wait>
-        <open_dir>C:\Users\Manuel\Documents</open_dir>
-      </makro>
-    </icon>
-	<icon id="18">
-      <name>PowerPoint</name>
-      <image_name>Image_0.png</image_name>
-      <makro>
-        <open_app>C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE</open_app>
-        <wait>1000</wait>
-        <open_dir>C:\Users\Manuel\Documents</open_dir>
-      </makro>
     </icon>
   </icons>
-  <settings>
-  </settings>
+  <settings />
 </makrotouch>

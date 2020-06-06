@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<makrotouch>
+  <icons>
+    <icon id="3">
+      <name>Word</name>
+      <image_name>Image_2.jpg</image_name>
+      <makro>
+        <open_app>C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE</open_app>
+      </makro>
+    </icon>
+    <icon id="5">
+      <name>HTL</name>
+      <image_name>Image_3.jpg</image_name>
+      <makro>
+        <open_website>https://htl.moedling.at/home/</open_website>
+        <wait>1000</wait>
+        <open_website>https://htl.moedling.at/home/</open_website>
+        <wait>1000</wait>
+        <open_website>https://htl.moedling.at/home/</open_website>
+        <wait>1000</wait>
+        <open_website>https://htl.moedling.at/home/</open_website>
+        <wait>1000</wait>
+        <open_website>https://htl.moedling.at/home/</open_website>
+        <wait>1000</wait>
+        <open_website>https://htl.moedling.at/home/</open_website>
+        <wait>1000</wait>
+        <open_website>https://htl.moedling.at/home/</open_website>
+        <wait>1000</wait>
+        <open_website>https://htl.moedling.at/home/</open_website>
+        <wait>1000</wait>
+        <open_website>https://htl.moedling.at/home/</open_website>
+        <wait>1000</wait>
+        <open_website>https://htl.moedling.at/home/</open_website>
+        <wait>1000</wait>
+        <open_website>https://htl.moedling.at/home/</open_website>
+        <wait>1000</wait>
+        <open_website>https://htl.moedling.at/home/</open_website>
+        <wait>1000</wait>
+        <open_website>https://htl.moedling.at/home/</open_website>
+        <wait>1000</wait>
+        <open_website>https://htl.moedling.at/home/</open_website>
+        <wait>1000</wait>
+        <open_website>https://htl.moedling.at/home/</open_website>
+        <wait>1000</wait>
+        <open_website>https://htl.moedling.at/home/</open_website>
+        <wait>1000</wait>
+        <open_website>https://htl.moedling.at/home/</open_website>
+        <wait>1000</wait>
+        <open_website>https://htl.moedling.at/home/</open_website>
+        <wait>1000</wait>
+      </makro>
+    </icon>
+    <icon id="1">
+      <name>Play/Pause</name>
+      <image_name>play.png</image_name>
+      <makro>
+        <play_pause />
+      </makro>
+    </icon>
+    <icon id="2">
+      <name>Next</name>
+      <image_name>next.png</image_name>
+      <makro>
+        <media_next />
+      </makro>
+    </icon>
+    <icon id="0">
+      <name>Previous</name>
+      <image_name>prev.png</image_name>
+      <makro>
+        <media_prev />
+      </makro>
+    </icon>
+    <icon id="4">
+      <name>Demo</name>
+      <image_name>notepad.png</image_name>
+      <makro>
+        <open_app>C:\Windows\system32\notepad.exe</open_app>
+        <wait>1000</wait>
+        <keyboard_input>Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. Goisser ist toll. </keyboard_input>
+      </makro>
+    </icon>
+    <icon id="6">
+      <name>Icon 7</name>
+      <image_name>Image_1.jpg</image_name>
+      <makro>
+        <screenshot onlyActiveWindow="True">C:\Users\Manuel\Desktop\MTRS Referat\</screenshot>
+        <shortcut>LControlKey+A</shortcut>
+      </makro>
+    </icon>
+    <icon id="7">
+      <name>PowerPoint</name>
+      <image_name>Image_0.png</image_name>
+      <makro>
+        <open_app>C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE</open_app>
+        <wait>1000</wait>
+        <open_dir>C:\Users\Manuel\Documents</open_dir>
+      </makro>
+    </icon>
+    <icon id="8">
+      <name>Icon</name>
+      <image_name />
+      <makro>
+        <mouse_move>X:2343 Y:292</mouse_move>
+        <mouse_click />
+      </makro>
+    </icon>
+    <icon id="9">
+      <name>Icon</name>
+      <image_name />
+      <makro />
+    </icon>
+  </icons>
+  <settings>
+  </settings>
+</makrotouch>

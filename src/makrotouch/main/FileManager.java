@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class FileManager {
-	
+
 	public static Image loadImage(String filename, Icon sender) {
 		try {
 			if (!filename.equals("")) {
@@ -28,7 +28,7 @@ public class FileManager {
 			return null;
 		}
 	}
-	
+
 	public static Image loadImage(String filename) {
 		try {
 			if (!filename.equals("")) {
@@ -41,17 +41,18 @@ public class FileManager {
 			return null;
 		}
 	}
-	
+
 	public static ArrayList<Icon> loadIcons(String configPath) {
 		ArrayList<Icon> tmp = new ArrayList<>();
 		try {
 			NodeList icons = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(configPath).getElementsByTagName("icon");
-			
+
 			for (int i = 0; i < icons.getLength(); i++) {
 				Element current = (Element) icons.item(i);
-				
+
 				if (!getProperty(current, "name").equals("") && !getProperty(current, "image_name").equals("")) {
-					tmp.add(new Icon(Integer.parseInt(current.getAttribute("id")), getProperty(current, "name"), getProperty(current, "image_name")));
+					tmp.add(new Icon(Integer.parseInt(current.getAttribute("id")), getProperty(current, "name"), getProperty(current,
+							"image_name")));
 				} else if (!getProperty(current, "name").equals("")) {
 					tmp.add(new Icon(Integer.parseInt(current.getAttribute("id")), getProperty(current, "name"), false));
 				} else {
@@ -61,12 +62,12 @@ public class FileManager {
 		} catch (NumberFormatException | SAXException | IOException | ParserConfigurationException e) {
 			System.out.println("Couldn't load icons");
 		}
-		
+
 		return tmp;
 	}
-	
+
 	private static String getProperty(Element element, String name) {
 		return element.getElementsByTagName(name).item(0).getTextContent();
 	}
-	
+
 }
